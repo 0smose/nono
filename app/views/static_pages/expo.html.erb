@@ -1,0 +1,27 @@
+<h2>SURIMPRESSIONS</h2>
+<% @user.photos[0..6].each do |photo| %>
+
+	<%= image_tag(photo, :style => 'height: 700px; width: auto;') %> 
+
+<% end %>
+
+<h2>IL NOUS FAUT REGARDER</h2>
+<% @user.photos[7..12].each do |photo| %>
+
+	<%= image_tag(photo, :style => 'height: 700px; width: auto;') %> 
+
+<% end %>
+
+<h2>BLOG</h2>
+<% @user.photos[13..14].each do |photo| %>
+
+	<%= image_tag(photo, :style => 'height: 700px; width: auto; transform: rotate(90deg)') %> 
+
+<% end %>
+
+<%= image_tag(@user.photos[15], :style => 'height: 700px; width: auto; ') %> 
+
+
+<%= image_tag(@user.photos[16], :style => 'height: 700px; width: auto; transform: rotate(90deg)') %> 
+
+<%= image_tag(@user.photos[17], :style => 'height: 700px; width: auto; ') %> 

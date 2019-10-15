@@ -7,8 +7,9 @@ class PhotosController < ApplicationController
   end 
 
  def destroy
- 	@user = User.find(params[:user_id])
-
+ 	@user = User.find(params[:id])
+ 	@user.photos.purge # or user.avatar.purge_later
+	
  	end
 
 end

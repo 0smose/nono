@@ -1,16 +1,32 @@
+
+
+
+<% if current_user == User.where(id: 1) %>
 <h1>Page Profil</h1>
-
-<p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@user.id%></p>
-<h3>Avatar actuel</h3>
-
-  <%(0...@user.photos.count).each do |photo| %>
-  <%= image_tag(@user.photos[photo]) %> 
-
-  <%end%>
-
 
 <h3>Changer d'avatar ?</h3>
 <%= form_tag user_photos_path(@user), multipart: true do %>
   <%= file_field_tag :photos %>
   <%= submit_tag "mettre à jour" %>
+<% end %>
+
+<p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@user.id%></p>
+<h3>Avatar actuel</h3>
+
+
+  <%@user.photos.each do |photo| %>
+  <%= image_tag(photo, :style => "height: 700px; width:auto;") %> 
+  <%= link_to 'Delete', 
+             user_delete_image_attachment_url(@user, photo.id), 
+                         method: :delete, 
+                         data: { confirm: 'Are you sure?', :user_id => @user.id }
+                          %> 
+
+  <%end%>
+<% else %>
+
+<h1>Page profil</h1>
+
+<%= link_to "Connectes-toi Noémie", new_user_session_path %>
+
 <% end %>
