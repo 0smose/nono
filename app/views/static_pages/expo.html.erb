@@ -2,7 +2,7 @@
 	<h2>SURIMPRESSIONS</h2>
 	<div class="row">
 		
-	<%= @user.photos[0..12].each do |photo| %>
+	<% @user.photos[0..12].each do |photo| %>
 		
 			<%= image_tag(photo, :class => 'col-3 photo-expo') %>
 	
