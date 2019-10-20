@@ -1,5 +1,7 @@
 {
   "name": "portfolio",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "gsap": "^2.1.3"
+  }
 }

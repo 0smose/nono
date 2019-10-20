@@ -11,6 +11,14 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require_self
+//= require app
+
+//= require 'greensock/TweenLite'
+//= require 'greensock/easing/EasePack'
+//= require 'greensock/jquery.gsap.js'
+

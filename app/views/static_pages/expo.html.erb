@@ -1,27 +1,43 @@
-<h2>SURIMPRESSIONS</h2>
-<% @user.photos[0..6].each do |photo| %>
+<div class="container " >
+	<h2>SURIMPRESSIONS</h2>
+	<div class="row">
+		
+	<%= @user.photos[0..12].each do |photo| %>
+		
+			<%= image_tag(photo, :class => 'col-3 photo-expo') %>
+	
+		<% end %>
+		
+		</div>
 
-	<%= image_tag(photo, :style => 'height: 700px; width: auto;') %> 
+<% if false %>
+	<%= image_tag(@user.photos[0], :style => 'height: 1000px; width: auto; transform: rotate(270deg)', :class => 'center parallax') %>
+	<% @user.photos[1..6].each do |photo| %>
 
-<% end %>
+		<%= image_tag(photo, :style => 'height: 1000px; width: auto;', class: 'center parallax') %> 
 
-<h2>IL NOUS FAUT REGARDER</h2>
-<% @user.photos[7..12].each do |photo| %>
+	<% end %>
 
-	<%= image_tag(photo, :style => 'height: 700px; width: auto;') %> 
+	<h2>IL NOUS FAUT REGARDER</h2>
+	<% @user.photos[7..12].each do |photo| %>
 
-<% end %>
+		<%= image_tag(photo, :style => 'height: 700px; width: auto;', class: 'center') %> 
 
-<h2>BLOG</h2>
-<% @user.photos[13..14].each do |photo| %>
+	<% end %>
 
-	<%= image_tag(photo, :style => 'height: 700px; width: auto; transform: rotate(90deg)') %> 
+	<h2 class="mt-5 mb-5">BLOG</h2>
+	<% @user.photos[13..14].each do |photo| %>
 
-<% end %>
+		<%= image_tag(photo, :style => 'height: 500px; width: auto; transform: rotate(90deg); top:500px', class: 'center') %> 
 
-<%= image_tag(@user.photos[15], :style => 'height: 700px; width: auto; ') %> 
+	<% end %>
+
+	<%= image_tag(@user.photos[15], :style => 'height: 700px; width: auto; ', class: 'center') %> 
 
 
-<%= image_tag(@user.photos[16], :style => 'height: 700px; width: auto; transform: rotate(90deg)') %> 
+	<%= image_tag(@user.photos[16], :style => 'height: 700px; width: auto; transform: rotate(90deg)', class: 'center') %> 
 
-<%= image_tag(@user.photos[17], :style => 'height: 700px; width: auto; ') %> 
+	<%= image_tag(@user.photos[17], :style => 'height: 700px; width: auto; ', class: 'center') %> 
+</div>
+
+<%end %>

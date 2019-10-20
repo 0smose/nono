@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
- *= require_self
+
  */
 
 
@@ -19,3 +19,74 @@
 	height: 100px;
 	width: auto;
 }
+
+.container-fluid {
+	padding-left: 0rem;
+	padding-right: 0rem;
+	overflow: hidden;
+}
+
+.center {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 50%;
+}
+
+.parallax {
+	background-attachment: fixed;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+}
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.slider {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(to left, #575554, black );
+	z-index: -1;
+}
+
+nav{
+	display: grid;
+	min-height: 10vh;
+}
+
+section{
+	display: flex;
+	height: 80vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.test{
+	height: 100%;
+	width: 100%;
+}
+
+.test img{
+	width: 100%;
+	height: 100%;
+}
+
+/*.test::after {
+	content: "";
+	background: black;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}*/
