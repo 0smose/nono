@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     resources :photos, only: [:create, :destroy]
     delete :delete_image_attachment
   end
-resources :users do
-  resources :articles
-  end
+resources :users 
+resources :articles
+  
+
 end

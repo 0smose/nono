@@ -1,7 +1,7 @@
 
+<% if user_signed_in? %>
 
 
-<% if current_user == User.where(id: 1) %>
 <h1>Page Profil</h1>
 
 <h3>Changer d'avatar ?</h3>
@@ -23,10 +23,10 @@
                           %> 
 
   <%end%>
-<% else %>
 
-<h1>Page profil</h1>
+<%end%>
 
-<%= link_to "Connectes-toi Noémie", new_user_session_path %>
 
-<% end %>
+
+
+
