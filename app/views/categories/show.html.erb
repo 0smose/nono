@@ -1,0 +1,12 @@
+<h3>Changer d'avatar ?</h3>
+<%= form_tag category_images_path(@category), multipart: true do %>
+  <%= file_field_tag :images %>
+  <%= text_field_tag :category %>
+
+  <%= submit_tag "mettre à jour" %>
+<% end %>
+
+ <%@category.images.each do |image| %>
+  <%= image_tag(image, :style => "height: 700px; width:auto;") %>
+  <%= @category.name %>
+  <% end %>

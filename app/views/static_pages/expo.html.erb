@@ -1,43 +1,52 @@
-<div class="container " >
-	<h2>SURIMPRESSIONS</h2>
-	<div class="row">
-		
-	<% @user.photos[0..12].each do |photo| %>
-		
-			<%= image_tag(photo, :class => 'col-3 photo-expo') %>
-	
-		<% end %>
-		
-		</div>
-
 <% if false %>
-	<%= image_tag(@user.photos[0], :style => 'height: 1000px; width: auto; transform: rotate(270deg)', :class => 'center parallax') %>
-	<% @user.photos[1..6].each do |photo| %>
-
-		<%= image_tag(photo, :style => 'height: 1000px; width: auto;', class: 'center parallax') %> 
-
-	<% end %>
-
-	<h2>IL NOUS FAUT REGARDER</h2>
-	<% @user.photos[7..12].each do |photo| %>
-
-		<%= image_tag(photo, :style => 'height: 700px; width: auto;', class: 'center') %> 
-
-	<% end %>
-
-	<h2 class="mt-5 mb-5">BLOG</h2>
-	<% @user.photos[13..14].each do |photo| %>
-
-		<%= image_tag(photo, :style => 'height: 500px; width: auto; transform: rotate(90deg); top:500px', class: 'center') %> 
-
-	<% end %>
-
-	<%= image_tag(@user.photos[15], :style => 'height: 700px; width: auto; ', class: 'center') %> 
-
-
-	<%= image_tag(@user.photos[16], :style => 'height: 700px; width: auto; transform: rotate(90deg)', class: 'center') %> 
-
-	<%= image_tag(@user.photos[17], :style => 'height: 700px; width: auto; ', class: 'center') %> 
+<div class="container">
+	<h2><% @category.each do |category| %>
+		<div class="row">
+			<%= category.name %>
+			<div class="col">
+				<% category.images.each do |image| %>
+				<%= image_tag(image, :style => "height: 700px; width:auto;") %>
+				<% end %>
+			</div>
+		</div>
+		<% end %>
+	</h2>
 </div>
 
-<%end %>
+<% end %>
+
+
+
+<div class="container">
+		 <ul class ="nav nav-tabs">
+      		<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+  </ul>
+
+<div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+    <p> <% @category.find_by(name: "blog").images.each do |image| %>
+     	<%=image_tag(image, :style => "height: 700px; width:auto;") %>
+     <% end %>
+ </p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+          <p> <% @category.find_by(name: "lalala").images.each do |image| %>
+     	<%=image_tag(image, :style => "height: 700px; width:auto;") %>
+     <% end %>
+ </p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>

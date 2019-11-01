@@ -68,3 +68,4 @@ gem 'table_print'
 gem "image_processing"
 gem 'greensock-rails'
 gem 'jquery-rails', '>=1.20.4.0'
+gem "tabs_on_rails"

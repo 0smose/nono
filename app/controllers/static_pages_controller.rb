@@ -9,8 +9,7 @@ class StaticPagesController < ApplicationController
 
 	def expo
 		@user = User.first
+		@category = Category.all
 	end
-
-
 
 end
