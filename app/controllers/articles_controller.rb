@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-
+before_action :authenticate_user!
 
 	def index
 		@articles = Article.all
@@ -10,7 +10,11 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
-		@article = Article.new(user_id: current_user.id, title: params[:title], body: params[:body], 
+		    puts "$" * 60
+    puts "ceci est le contenu de params :"
+    puts params
+    puts "$" * 60
+		@article = Article.new(user_id: [current_user.id], title: params[:title], body: params[:body], 
 		category: params[:category])
 		if @article.save
 			redirect_to articles_path

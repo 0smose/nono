@@ -1,5 +1,9 @@
 class CategoriesController < ApplicationController
 
+  def new
+    @category = Category.new(params[:category])
+  end
+
   def create
     @category = Category.create!(category_params)
     redirect_to @category
@@ -11,7 +15,7 @@ class CategoriesController < ApplicationController
  
   private
     def category_params
-      params.require(:category).permit(:name, :images)
+      params.permit(:name, :images )
     end
 
 end

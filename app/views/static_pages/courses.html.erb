@@ -1,8 +1,8 @@
-<% if user_signed_in? %>			
+	
+		
 	<div class="new-article">
 		<%= link_to '+', new_article_path(:user_id), :style => 'color = #FFFFFF;' %>
 	</div>
-<%end%>
 
 <div class="container mt-5">
 	<% @article.each do |article| %>

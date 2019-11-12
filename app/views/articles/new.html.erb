@@ -1,16 +1,27 @@
- <h2>Créer un article</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h2>Créer un article</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+                  <!-- Zone du formulaire -->
+                  <%= render 'articles/error_messages' %>
 
-                <!-- Zone du formulaire -->
-                <%= form_tag url_for(action: 'create'), method: "post", class: "mt-4" do %>
+                  <%= form_tag url_for(action: 'create'), method: "post", class: "mt-4" do %>
 
-                 <%= label_tag 'Quel sera son titre ? ', nil, class: "font-weight-bold" %>
-                <%= text_field_tag 'title', @article.title, class: "form-control" %>
+                   <%= label_tag 'Quel sera son titre ? ', nil, class: "font-weight-bold" %>
+                  <%= text_field_tag 'titre', @article.title, class: "form-control" %>
 
-                <%= label_tag 'Son contenu :', nil, class: "font-weight-bold mt-3" %>
-                <%= text_area_tag 'body', @article.body, placeholder: "Écris ton article ici", class: "form-control"  %>
+                  <%= label_tag 'Son contenu :', nil, class: "font-weight-bold " %>
+                  <%= text_area_tag 'body', @article.body, placeholder: "Écris ton article ici", class: "form-control"  %>
 
-				 <%= label_tag 'Sa catégorie :', nil, class: "font-weight-bold mt-3" %>
-                <%= text_area_tag 'category', @article.category, placeholder: "Blog, tarif, ateliers...", class: "form-control"  %>
+  				 <%= label_tag 'Sa catégorie :',nil, class: "font-weight-bold " %>
+            <%= text_area_tag 'category', @article.category, placeholder: "Blog, tarif, ateliers...", class: ""  %>
 
-  <%= submit_tag "Créer l'article", class: "btn btn-primary mb-3 mt-3" %>
-  <%end %>
+    <%= submit_tag "Créer l'article", class: "btn btn-primary mb-3 mt-3" %>
+        <%end %>
+        </div>
+    </div>
+</div>
