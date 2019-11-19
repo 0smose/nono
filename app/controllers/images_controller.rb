@@ -1,8 +1,17 @@
 class ImagesController < ApplicationController
 
+
+	def new
+
+	end
+
 	def create
     @category = Category.find_by(name: params[:category])
     @category.images.attach(params[:images])
-    redirect_to(category_path(@category))
+    redirect_to(user_path(current_user.id))
   end 
+
+  def index
+  	@categories = Category.all
+  end
 end

@@ -1,60 +1,50 @@
-<% if false %>
-<div class="container">
-	<h2><% @category.each do |category| %>
-		<div class="row">
-			<%= category.name %>
-			<div class="col">
-				<% category.images.each do |image| %>
-				<%= image_tag(image, :style => "height: 700px; width:auto;") %>
-				<% end %>
-			</div>
-		</div>
-		<% end %>
-	</h2>
-</div>
-
-<% end %>
-
-
-
-<div class="container">
-		 <ul class ="nav nav-tabs">
-      		<li class="active nav-item"><a data-toggle="tab" href="#home">Home</a></li>
+<div class="container ">
+		 <ul class ="nav nav-tabs my-menu ">
+      		<!-- <h5><li class="active nav-item"><a data-toggle="tab" href="#home">Toutes</a></li></h5> -->
       		<% @category.each do |cat| %>
-    <li class="nav-item " ><a class="iterator" data-toggle="tab" href="#menu"><%= cat.name%></a></li>
+    <h5><li class="nav-item mt-3 " ><a class="iterator " data-toggle="tab" href="#menu"><%= cat.name%></a></li></h5>
 
 <% end %>
 
   </ul>
 
-<div class="tab-content">
-
-    <div id="menu1" class="tab-pane fade">
-      <h3 class="mt-5">Blog</h3>
-    <p> <% @category.find_by(name: "blog").images.each do |image| %>
-     	<%=image_tag(image, :style => "height: 700px; width:auto;") %>
-     <% end %>
- </p>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3 class="mt-5">Grossesse</h3>
-          <p> <% @category.find_by(name: "lalala").images.each do |image| %>
-     	<%=image_tag(image, :style => "height: 700px; width:auto;") %>
-     <% end %>
- </p>
-    </div>
-    <div id="menu3" class="tab-pane fade">
-      <h3 class="mt-5">Mariage</h3>
-       <p> <% @category.find_by(name: "test").images.each do |image| %>
-     	<%=image_tag(image, :style => "height: 700px; width:auto;") %>
-     <% end %>
-    </div>
+  <div class="tab-content">
+        <% @category.each do |cat| %>
+        <div id ="" class ="tab-pane fade image">
+        <h3 class="mt-5"><%=cat.name%></h3>
+        <div class="row">
+          <p> <% cat.images.each do |image| %>
+            <div class="col col-6">
+            <%= image_tag(image, :style => "max-width: 200px; height:auto;") %>
+          </div>
+              <% end %>)
+              </div>
+              </div>
+         </p>
+      <% end %>
+  
   </div>
 </div>
+ 
+
+
+
+
 <script>
 	var a = document.getElementsByClassName("iterator");
 	for (var i = 0; i < a.length; i++) {
   a[i].href = "#menu"+`${i+1}`;
   
 }
+
+    var b = document.getElementsByClassName("image");
+    
+    for (var e = 0; e <b.length; e++) {
+     console.log(b[e]);
+     b[e].id = "menu" + (e + 1); 
+      // = ('' + `${e+1}`);
+    }
 </script>
+
+
+  

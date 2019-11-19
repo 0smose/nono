@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col">
+		<%= link_to 'Créer un nouvel article', new_admins_article_path %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col">
+		<% @articles.each do |article| %>
+		<div class="card">
+			<div class="card-body">
+				<h3 class="card-title"> <%= article.title %> </h3>
+				<p class="card-text"> <%= article.body %> </p>
+				<p><%= article.category %></p>
+				<%= link_to "Supprimer l'article", admins_article_path(article.id), method: 'delete' %>
+				<%= link_to "Éditer l'article", edit_admins_article_path(article.id) %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
+

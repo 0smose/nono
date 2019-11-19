@@ -12,4 +12,10 @@ class StaticPagesController < ApplicationController
 		@category = Category.all
 	end
 
+	def landing 
+		@disable_nav = true
+	end
+
+
+
 end

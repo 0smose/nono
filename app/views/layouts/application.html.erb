@@ -17,7 +17,7 @@
 
 <body class="d-flex flex-column h-100">
 
-    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/navbar' unless @disable_nav %>
 
     <!-- Flash messages -->
     
@@ -25,7 +25,9 @@
 
     <%= yield %>
 
-    <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' unless @disable_nav %>
+    
+    
 
 
  <!-- Bootstrap JQuery -->

@@ -7,22 +7,26 @@ before_action :authenticate_user!
 
 	def new 
 		@article = Article.new
+	@category = Category.new
+
 	end
 
 	def create
-		    puts "$" * 60
-    puts "ceci est le contenu de params :"
-    puts params
-    puts "$" * 60
-		@article = Article.new(user_id: [current_user.id], title: params[:title], body: params[:body], 
-		category: params[:category])
+		@category = Category.new
+		@category = Category.create!(name: params[:name])
+		if @category.save
+			redirect_to category_path(@category)
+		end
+		@article = Article.new(user_id: current_user.id, title: params[:title], body: params[:body], category: params[:category])
 		if @article.save
-			redirect_to articles_path
+
 			flash[:success] = "Votre article a bien été crée."
 		else
 			render :new
 		end
+
 	end
+
 
 	def show	
 		@article = Article.find(params[:id])

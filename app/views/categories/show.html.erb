@@ -1,7 +1,7 @@
 <h3>Changer d'avatar ?</h3>
 <%= form_tag category_images_path(@category), multipart: true do %>
   <%= file_field_tag :images %>
-  <%= text_field_tag :category %>
+  <%= text_field_tag :category, @category.name	, params[:category] || {} %>
 
   <%= submit_tag "mettre à jour" %>
 <% end %>

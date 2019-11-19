@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 	def show
     @user = User.find(params[:id])
+    @categories = Category.all
   end
   
 
@@ -10,4 +11,5 @@ class UsersController < ApplicationController
     @user.photos.find_by(params[:attachment_id]).purge
     redirect_to user_path(@user.id)
   end
+
 end
