@@ -1,11 +1,10 @@
-		<div class="row landing-image-container">
-			<div class="col">
-				<%= link_to static_pages_home_path do %>
-					<%= image_tag("landing.JPG", class: "landing-image") %>
-				<% end %>
-				<h1> <%= link_to "NOÉMIE BLUMET PHOTO", static_pages_home_path, id: "landing-title" %></h1>
-				</div>
+<section class="section-landing">	
+	<div class="landing-image-container">
+			
+		<%= link_to static_pages_home_path do %>
+			<%= image_tag("landing.JPG", class: "landing-image") %>
+		<% end %>
 
-					
-				
-		</div>
+		<h1> <%= link_to "NOÉMIE BLUMET PHOTO", static_pages_home_path, id: "landing-title" %></h1>		
+	</div>
+</section>

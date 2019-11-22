@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'pg', '>= 0.18', '< 2.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -69,3 +69,5 @@ gem "image_processing"
 gem 'greensock-rails'
 gem 'jquery-rails', '>=1.20.4.0'
 gem "tabs_on_rails"
+gem 'flexbox-rails'
+gem "autoprefixer-rails"

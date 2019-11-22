@@ -1,12 +1,16 @@
-<h3>Changer d'avatar ?</h3>
+<h3>Ajout de photo ?</h3>
 <%= form_tag category_images_path(@category), multipart: true do %>
   <%= file_field_tag :images %>
   <%= text_field_tag :category, @category.name	, params[:category] || {} %>
 
   <%= submit_tag "mettre à jour" %>
 <% end %>
-
- <%@category.images.each do |image| %>
-  <%= image_tag(image, :style => "height: 700px; width:auto;") %>
-  <%= @category.name %>
-  <% end %>
+	
+<div class="row">
+	<%@category.images.each do |image| %>
+		<div class="col col-2 mt-5">
+			<%= image_tag(image, :style => "height: auto; width:200px;", class:"mt-2 ml-2") %>
+			<%= link_to "X", category_delete_image_attachment_path(@category.id, image.id), method: "delete" %>
+		</div>
+	<% end %>
+ </div>

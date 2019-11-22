@@ -52,10 +52,13 @@ class CategoriesController < ApplicationController
     end
   end
 
-     def delete_image_attachment
+  def delete_image_attachment
     @category = Category.find(params[:category_id])
-    @category.images.find_by(params[:attachment_id]).purge
+    @category.images.find(params[:format]).purge
     redirect_to category_path(@category.id)
+    # @image = ActiveStorage::Blob.find(params[:id])
+    # @image.attachments.first.purge
+    # redirect_to category_path(id)
   end
 
   

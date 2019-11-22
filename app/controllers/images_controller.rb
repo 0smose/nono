@@ -8,10 +8,16 @@ class ImagesController < ApplicationController
 	def create
     @category = Category.find_by(name: params[:category])
     @category.images.attach(params[:images])
-    redirect_to(user_path(current_user.id))
+    redirect_to(category_path(@category.id))
   end 
 
   def index
   	@categories = Category.all
   end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.images.purge
+  end
+
 end
