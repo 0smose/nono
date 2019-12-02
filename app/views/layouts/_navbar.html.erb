@@ -6,48 +6,48 @@
     <span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active color">
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto mx-auto">
+            <li class="nav-item active color ">
+            <li class="nav-item">
+                <%= link_to "Expo", categories_path, class: "nav-link" %>
+            </li>            
 
-        <%= link_to "Qui suis-je ?", static_pages_about_me_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-        <%= link_to "Espace Pro", static_pages_espace_pro_path, class: "nav-link" %>
+            <li class="nav-item">
+                <%= link_to "Catalogue", static_pages_espace_pro_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "Cours & Ateliers", articles_path, class: "nav-link" %>
+            </li>  
 
-    </li>
-    <li class="nav-item">
-        <%= link_to "Expo", static_pages_expo_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-        <%= link_to "Ateliers photo", articles_path, class: "nav-link" %>
-    </li>
+            <li class="nav-item"> 
+                <%= link_to "À propos", static_pages_about_me_path, class: "nav-link" %>
+            </li>
 
+            <% if user_signed_in? && current_user.id_admin == true %>
+                  <li class="nav-item">
+                      <%= link_to "Admin", admins_root_path, class: "nav-link" %>
+                  </li>
+                  
+            <% end %>
 
-    <% if user_signed_in? %>
+            <% if user_signed_in? %>
 
-    <li class="nav-item">
-      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete,  class: "nav-link" %>
-  </li>
+                <li class="nav-item">
+                  <%= link_to "Déconnexion", destroy_user_session_path, method: :delete,  class: "nav-link" %>
+                </li>
 
-  <% else %>
+            <% else %>
 
-  <li class="nav-item">
-      <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
-  </li>
+                <li class="nav-item">
+                    <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
+                </li>
 
-<% end %>
+            <% end %>
 
-  <% if user_signed_in? && current_user.id_admin == true %>
-  <li class="nav-item">
-      <%= link_to "Admin", admins_root_path, class: "nav-link" %>
-  </li>
-  
-  <% end %>
+        </ul>
 
-</ul>
-
-</div>
+        </div>
 </nav>
 
 

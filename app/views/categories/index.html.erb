@@ -1,24 +1,64 @@
-<div class="container mt-5 ">
-		<%= link_to '+', new_category_path, class: ' btn btn-primary mb-5', style: "font-size: 30px;" %>
-	<% @categories.each do |cat| %>
-		<div class="card mb-5 ">
-			<div class="card-title text-center ">
-				<%= cat.name %>
-			</div>			
-			<div class="row">
-				
-			<% cat.images.each do |image| %>
-			<div class="col col-4">
-			<%= image_tag(image, style: "max-width: 300px") %>
-			</div>
-		<% end %>
-		
-		</div>
+<div class="section mb-5 test1">
+    <div class="container-fluid	">
+        <div class="row">
+            <div class="col col-12">
+                <ul class ="nav nav-tabs border-light my-menu justify-content-center">
+                    <% @category.each do |cat| %>
+                        <% cat.images.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
+                      
+                         
+                        <li class="nav-item mt-3" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(image, class:" fit")%></a>
+                        </li>
+                       
+                        <% end %>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
 
-		</div>
-		 <div class="my-btn-display mb-5 mt-5">
-			<%= link_to "Éditer", edit_category_path(cat.id), class: "btn my-btn btn-primary " %>
-			<%= link_to "Supprimer", category_path(cat.id), method: :delete, data: {confirm: "are you sure ?"}, class: "btn my-btn btn-danger  " %>
-			</div>
-	<%end %>
+        <div class="row ">
+            <div class="col col-12">
+                <div class="tab-content">
+                    <% @category.each do |cat| %>
+                        <div id ="" class ="tab-pane fade image ">
+                            <h3 class="mt-5 mb-5 text-center"><%=cat.name%></h3>
+                            <p class="mt-5 mb-5 text-center"><%=cat.description%></p>
+                            <div class="flex" >
+                                <div class="card" style="max-width: 18rem;">
+                                <% cat.images.each do |image| %>
+                                    
+                                            <%= image_tag((image), class:"mt-1 ml-1 mb-1 mr-1 d-block w-100 card-img-top ") %>
+
+                                   
+                                <% end %>  
+                                 </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+<script>
+	var a = document.getElementsByClassName("iterator");
+	for (var i = 0; i < a.length; i++) {
+        a[i].href = "#menu"+`${i+1}`;
+    }
+
+    var b = document.getElementsByClassName("image");
+
+    for (var e = 0; e <b.length; e++) {
+     b[e].id = "menu" + (e + 1); 
+ }
+
+ 
+</script>
+
+
+

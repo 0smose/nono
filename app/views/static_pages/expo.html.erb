@@ -1,24 +1,17 @@
 <div class="section mb-5 test1">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col col-12">
                 <ul class ="nav nav-tabs my-menu justify-content-center">
                     <% @category.each do |cat| %>
-                        <li class="nav-item mt-3" ><a class="iterator " data-toggle="tab" href="#menu"><%= cat.name%></a>
+                        <% cat.images.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
+                         
+                        <li class="nav-item mt-3" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(image, :style => "max-width: 200px; max-height:200px;")%></a>
                         </li>
+                        <% end %>
                     <% end %>
                 </ul>
             </div>
-        </div>
-        <div class="col col-12">
-            <p class="mt-5"> LE DORMEUR DU VAL, DE LA BITE <br>
-            Il était une fois un bite, qui était grosse et petite à la fois...</p> 
-            <p> LE DORMEUR DU VAL, DE LA BITE <br>
-            Il était une fois un bite, qui était grosse et petite à la fois...</p> 
-            <p> LE DORMEUR DU VAL, DE LA BITE <br>
-            Il était une fois un bite, qui était grosse et petite à la fois...</p> 
-            <p class="mb-5"> LE DORMEUR DU VAL, DE LA BITE <br>
-            Il était une fois un bite, qui était grosse et petite à la fois...</p> 
         </div>
 
         <div class="row ">
@@ -26,12 +19,17 @@
                 <div class="tab-content">
                     <% @category.each do |cat| %>
                         <div id ="" class ="tab-pane fade image ">
-                            <h3 class="mt-5 text-center"><%=cat.name%></h3>
-                            <div class="flex">
-
+                            <h3 class="mt-5 mb-5 text-center"><%=cat.name%></h3>
+                            <p class="mt-5 mb-5 text-center"><%=cat.description%></p>
+                            <div class="flex" >
+                                <div class="card" style="max-width: 18rem;">
                                 <% cat.images.each do |image| %>
-                                    <%= image_tag(image, :style => "max-width: 400px; max-height:400px;", class:"mt-1 ml-1 mb-1 mr-1 d-block w-100") %>
-                                <% end %>
+                                    
+                                            <%= image_tag(@category.thumbnail(image), class:"mt-1 ml-1 mb-1 mr-1 d-block w-100 card-img-top ") %>
+
+                                   
+                                <% end %>  
+                                 </div>
                             </div>
                         </div>
                     <% end %>
@@ -56,6 +54,8 @@
     for (var e = 0; e <b.length; e++) {
      b[e].id = "menu" + (e + 1); 
  }
+
+ 
 </script>
 
 

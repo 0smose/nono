@@ -11,21 +11,21 @@ Rails.application.routes.draw do
     resources :photos, only: [:create, :destroy]
     delete :delete_image_attachment
   end
-resources :users 
-resources :articles, only: [:show, :index]
-resources :categories
-resources :admins, only: [:index]
-
-resources :categories do
-  resources :images
-  delete :delete_image_attachment
-end
   
-namespace :admins do
-  root to: "admins#index"
-  resources :articles
+  resources :users 
+  resources :articles, only: [:show, :index]
+  resources :categories
+  resources :admins, only: [:index]
 
-
-end
+  resources :categories do
+    resources :images
+    delete :delete_image_attachment
+  end
+    
+  namespace :admins do
+    root to: "admins#index"
+    resources :articles
+    resources :categories
+  end
 
 end

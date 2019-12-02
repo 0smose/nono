@@ -169,6 +169,8 @@ h2 {
 	justify-content: center;
 	flex-wrap: wrap;
 	align-items: stretch;
+	flex-shrink: 3;
+	flex-basis: min-content;
 }
 
 
@@ -179,4 +181,16 @@ h2 {
   position: relative;
 
 }
+
+
+
+.fit {
+	width: 200px;
+
+	height: 200px;
+	object-fit: cover;
+	background-color: black;
+}
+
+
 

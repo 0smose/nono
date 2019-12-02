@@ -20,4 +20,9 @@ class ImagesController < ApplicationController
     @category.images.purge
   end
 
+    private
+    def image_params
+      params.permit(:images, :orientation )
+    end
+
 end

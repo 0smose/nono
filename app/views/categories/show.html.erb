@@ -1,16 +1,60 @@
-<h3>Ajout de photo ?</h3>
-<%= form_tag category_images_path(@category), multipart: true do %>
-  <%= file_field_tag :images %>
-  <%= text_field_tag :category, @category.name	, params[:category] || {} %>
+<div class="container-fluid">
+	<h3 class="text-center mt-5 mb-5">Ajout de photo ?</h3>
+	<div class="row">
+		<div class="col col-9">
+			
+			<%= form_tag category_images_path(@category), multipart: true do %>
+				<%= file_field_tag 'images[]', :multiple => true %>
+				<%= hidden_field_tag :category, @category.name	, params[:category] || {} %>
+				<button type="button" ><%= submit_tag "upload" %></button>
+			<% end %>
+			
+			<% if false %>
+			
+			<%= form_with(model: @category, local: true) do |form| %>
+				<% if @category.errors.any? %>
+			  <div id="error_explanation" data-dismiss="alert" class="alert alert-danger" role="alert" aria-label="Close">
+			    <ul>
+			      <% @category.errors.full_messages.each do |message| %>
+			        <li><%= message %></li>
+			      <% end %>
+			    </ul>
+			  </div>
+			<% end %>
 
-  <%= submit_tag "mettre à jour" %>
-<% end %>
-	
-<div class="row">
-	<%@category.images.each do |image| %>
-		<div class="col col-2 mt-5">
-			<%= image_tag(image, :style => "height: auto; width:200px;", class:"mt-2 ml-2") %>
-			<%= link_to "X", category_delete_image_attachment_path(@category.id, image.id), method: "delete" %>
+				<div class="field">
+					<%= form.hidden_field( :category, value: @category) %>
+				</div>
+
+				<div class="field">
+					<%= form.label :images %>
+					<%= form.file_field :images, multiple: true %>
+				</div>
+				
+				<div class="actions">
+					<%= form.submit %>
+				</div>
+
+			<% end %>
+			<% end %>
+			
 		</div>
-	<% end %>
- </div>
+
+		<div class="col-3">
+			<%= form_tag url_for(action: 'update'), method: "patch", class: "mt-4" do %>
+				<%= label_tag 'Quel sera son nom ? ', nil, class: "font-weight-bold" %>
+                <%= text_field_tag 'name', @category.name, class: "form-control" %>
+				<%= submit_tag "Éditer le nom", class: "btn btn-primary mb-3 mt-3" %>
+  			<%end %>
+		</div>
+	</div>
+
+	<div class="row">
+		<% @category.images.each do |image| %>
+			<div class="col-2 mt-5 ml-5 mr-5">
+				<%= image_tag((image),  class:"mt-2 ml-2 fit") %>
+				<%= link_to "X", category_delete_image_attachment_path(@category.id, image.id), method: "delete" %>
+			</div>
+		<% end %>
+ 	</div>
+</div>

@@ -1,8 +1,9 @@
 
 
 <%= form_tag category_images_path(@category), multipart: true do %>
-  <%= file_field_tag :images %>
+  <%= file_field_tag :images, multiple: true %>
   <%= text_field_tag :category %>
+
 
   <%= submit_tag "mettre à jour" %>
 <% end %>

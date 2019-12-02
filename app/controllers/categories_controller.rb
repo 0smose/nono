@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :check_if_admin
 
   def index
-    @categories = Category.all
+    @category = Category.all
   end
 
   def new
@@ -64,7 +64,7 @@ class CategoriesController < ApplicationController
   
   private
     def category_params
-      params.permit(:name, :images )
+      params.permit(:name, :description, images: [] )
     end
 
 end
