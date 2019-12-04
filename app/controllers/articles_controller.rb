@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 before_action :authenticate_user!
 
 	def index
-		@articles = Article.all
+		@articles = Article.where(category: "Atelier/cours")
 	end 
 
 	def new 

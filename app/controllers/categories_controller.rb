@@ -12,6 +12,8 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.create!(category_params)
     redirect_to @category
+    flash[:succes] = "Tu as bien crée la catégorie"
+
   end
 
   def edit
@@ -36,7 +38,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     if @category.destroy
-      redirect_to categories_path
+      redirect_to admins_categories_path
       flash[:succes] = "Tu as bien supprimé la catégorie"
     else
       flash[:alert] = "Un problème est survenu, recommence :p"
@@ -56,9 +58,6 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:category_id])
     @category.images.find(params[:format]).purge
     redirect_to category_path(@category.id)
-    # @image = ActiveStorage::Blob.find(params[:id])
-    # @image.attachments.first.purge
-    # redirect_to category_path(id)
   end
 
   

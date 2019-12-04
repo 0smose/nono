@@ -11,10 +11,19 @@
 				<div class="card ml-5 mr-5 mb-5">
 					<div class="card-body">
 						<h3 class="card-title"> <%= article.title %> </h3>
-						<p class="card-text"> <%= article.body %> </p>
-						<p><%= article.category %></p>
-						<button class="btn btn-danger"><%= link_to "Supprimer", admins_article_path(article.id), method: 'delete' %> </button>
-						<button class="btn btn-info"><%= link_to "Éditer", edit_admins_article_path(article.id) %> </button>
+						<ul>	
+							<li><p class="card-text">  <%= article.body %> </p></li>
+							<li><p class="card-text">Public cible : <%= article.public %> </p></li>
+							<li><p class="card-text"> Nombre de personnes : <%= article.number %> </p></li>
+							<li><p class="card-text">Matériel logistique : <%= article.equipment %> </p></li>
+							<li><p class="card-text">Durée : <%= article.duration %> heures </p></li>
+							<li><p class="card-text"> Tarif : <%= article.price %> € </p></li>
+							<li><p><%= article.category %></p></li>
+						</ul>
+					<div class=" text-center">		
+						<%= link_to "Supprimer", admins_article_path(article.id), method: 'delete',class:"btn btn-danger" %> 
+						<%= link_to "Éditer", edit_admins_article_path(article.id), class:"btn btn-info" %> 
+					</div>
 					</div>
 				</div>
 			</div>

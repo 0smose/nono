@@ -9,7 +9,14 @@ class ImagesController < ApplicationController
     @category = Category.find_by(name: params[:category])
     @category.images.attach(params[:images])
     redirect_to(category_path(@category.id))
+
   end 
+
+  # def create2
+  #   @catalogue = Catalogue.find_by(name: params[:catalogue])
+  #   @catalogue.images.attach(params[:images])
+  #   redirect_to(catalogue_path(@catalogue.id))
+  # end
 
   def index
   	@categories = Category.all

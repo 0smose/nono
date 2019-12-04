@@ -16,9 +16,16 @@ Rails.application.routes.draw do
   resources :articles, only: [:show, :index]
   resources :categories
   resources :admins, only: [:index]
+  resources :catalogues, only: [:index]
 
   resources :categories do
     resources :images
+    delete :delete_image_attachment
+  end
+
+  resources :catalogues do
+    resources :pictures
+    # post 'test', to: 'images#create2', as: :mytest
     delete :delete_image_attachment
   end
     
@@ -26,6 +33,7 @@ Rails.application.routes.draw do
     root to: "admins#index"
     resources :articles
     resources :categories
+    resources :catalogues
   end
 
 end

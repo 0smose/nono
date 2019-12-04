@@ -4,11 +4,11 @@
             <div class="row">
                 <div class="col col-12">
                     <ul class ="nav nav-tabs border-light my-menu justify-content-center">
-                        <% @category.each do |cat| %>
-                        <% cat.images.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
+                        <% @catalogues.each do |cat| %>
+                        <% cat.pictures.sort_by{|t| - t.created_at.to_i}.first(1).each do |picture| %>
 
 
-                        <li class="nav-item mt-3" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(image, class:" fit")%></a>
+                        <li class="nav-item mt-3" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(picture, class:" fit")%></a>
                         </li>
 
                         <% end %>
@@ -21,15 +21,15 @@
                 <div class="col col-12">
                     <div class="tab-content">
                         
-                        <% @category.each do |cat| %>
+                        <% @catalogues.each do |cat| %>
                         <div id ="" class ="tab-pane fade image ">
                             <h3 class="mt-5 mb-5 text-center"><%=cat.name%></h3>
                             <p class="mt-5 mb-5 text-center"><%=cat.description%></p>
 
                             <div class="flex" >
                                 <div class="card border-light" style="max-width: 18rem;">
-                                    <% cat.images.each do |image| %>
-                                    <%= image_tag((image), class:"mt-1 ml-1 mb-1 mr-1 d-block w-100 card-img-top ")  %>
+                                    <% cat.pictures.each do |picture| %>
+                                    <%= image_tag((picture), class:"mt-1 ml-1 mb-1 mr-1 d-block w-100 card-img-top ")  %>
                                     <% end %>  
                                 </div>
                             </div>

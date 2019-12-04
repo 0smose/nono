@@ -1,16 +1,18 @@
-<h1 class="text-center"> Gestionnaire de catégories </h1>
+<section>  
+  <h1 class="text-center mt-5 mb-5"> Créer une nouvelle catégorie </h1>
 
-<div class="container">
-	<div class="row">
-		<div class="col col-12 text-center">
+  <div class="container">
+  	<div class="row align-items-center">
+  		<div class="col col-4 text-center mx-auto">
 
- <%= form_tag url_for(action: 'create'), method: "post", class: "mt-4" do %>
+   <%= form_tag url_for(action: 'create'), method: "post", class: "mt-4" do %>
 
-              <h4 class="text-center">   <%= label_tag 'Quel sera son titre ? ', nil, class: "font-weight-bold" %> </h4>
-                <p class="text-center"><%= text_field_tag 'name', @category.name, class: "", placeholder: "titre" %></p>
-                <p class="text-center"><%= text_field_tag 'description', @category.description, placeholder: "description" , class: "" %></p>
-                  <%= submit_tag "Créer la nouvelle catégorie", class: "btn btn-primary mb-3 mt-3" %>
-                <% end %>
-            </div>
-        </div>
-	</div>
+                
+                  <p class="text-center mb-5"><%= text_field_tag 'name', @category.name, class: "form-control", placeholder: "titre" %></p>
+                  <p class="text-center"><%= text_field_tag 'description', @category.description, placeholder: "description" , class: "form-control" %></p>
+                    <%= submit_tag "Créer la nouvelle catégorie", class: "btn btn-primary mb-3 mt-3" %>
+                  <% end %>
+              </div>
+          </div>
+  	</div>
+</section>

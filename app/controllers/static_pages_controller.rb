@@ -16,5 +16,8 @@ class StaticPagesController < ApplicationController
 		@disable_nav = true
 	end
 
+	def about_me
+		@articles = Article.where(category: "Article")
+	end
 
 end
