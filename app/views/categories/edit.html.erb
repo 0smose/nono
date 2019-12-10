@@ -3,9 +3,11 @@
                 <!-- Zone du formulaire -->
                 <%= form_tag url_for(action: 'update'), method: "patch", class: "mt-4" do %>
 
-                 <%= label_tag 'Quel sera son nom ? ', nil, class: "font-weight-bold" %>
+                <%= label_tag 'nom', nil, class: "font-weight-bold" %>
                 <%= text_field_tag 'name', @category.name, class: "form-control" %>
-
+                <%= label_tag 'description', nil, class: 'font-weight-bold' %>
+				<%= text_field_tag 'description', @category.description, class: "form-control" %>
+	
   <%= submit_tag "Éditer l'article", class: "btn btn-primary mb-3 mt-3" %>
   <%end %>
    <%= link_to "Supprimer la catégorie", category_path(@category), method: :delete, data: { confirm: 'Êtes-vous sûr(e) ?' }, class: "btn btn-danger mt-2 mb-1" %>

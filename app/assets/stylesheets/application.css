@@ -17,34 +17,3 @@
 
 
 
-
-
-/**{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}*/
-
-/*.slider {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	background: linear-gradient(to left, #575554, black );
-	z-index: -1;
-}*/
-
-/*nav{
-	display: grid;
-	min-height: 10vh;
-}
-
-section{
-	display: flex;
-	height: 80vh;
-	justify-content: center;
-	align-items: center;
-}
-*/
-

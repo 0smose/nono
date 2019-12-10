@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
 
     def update
     @category = Category.find(params[:id])
-    if @category.update(name: params[:name])
+    if @category.update(name: params[:name], description: params[:description])
       flash[:success] = "Vous avez bien édité la catégorie"
       redirect_to categories_path
     else 

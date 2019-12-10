@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'static_pages/about_me'
   get 'static_pages/espace_pro'
   get 'static_pages/expo'
+  get 'static_pages/test'
   devise_for :users
   resources :users, only: [:show] do
     resources :photos, only: [:create, :destroy]

@@ -12,10 +12,12 @@
 		</div>
 
 		<div class="col-3">
-			<%= form_tag url_for(action: 'update'), method: "patch", class: "mt-4" do %>
-				<%= label_tag 'Quel sera son nom ? ', nil, class: "font-weight-bold" %>
-                <%= text_field_tag 'name', @category.name, class: "form-control" %>
-				<%= submit_tag "Éditer le nom", class: "btn btn-primary mb-3 mt-3" %>
+			<%= form_tag url_for(action: 'update'), method: "patch", class: "mt-4 text-center" do %>
+				<%= label_tag 'Quel sera son nom ? ', nil, class: "font-weight-bold mb-3" %>
+                <%= text_field_tag 'name', @category.name, class: "form-control mb-3" %>
+				<%= label_tag 'description', nil, class: 'font-weight-bold mb-3' %>
+				<%= text_area_tag 'description', @category.description, class: "form-control mb-3" %>
+				<%= submit_tag "Éditer", class: "btn btn-primary mb-3 mt-3 form-control" %>
   			<%end %>
 		</div>
 	</div>

@@ -20,4 +20,8 @@ class StaticPagesController < ApplicationController
 		@articles = Article.where(category: "Article")
 	end
 
+	def test
+		@category = Category.all
+	end
+
 end
