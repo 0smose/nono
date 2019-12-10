@@ -29,7 +29,7 @@ for (var modal = 0; modal < getImages.length; modal++) {
 
 var getModal = document.querySelectorAll(".modal");
 
-console.log(getModal)
+
 
 for (var m = 0;m<getModal.length;m++){
     getModal[m].id = "myModal" + (m +1);
@@ -51,9 +51,9 @@ for (let i = 0; i<getImages.length; i++) {
 	getImages[i].onclick = function() {
 		getModal[i].style.display = "block";
 		getModalContent[i].src = this.src;
-    mySpan[i].onclick = function() {
-    getModal[i].style.display = "none";
-  }
+      mySpan[i].onclick = function() {
+      getModal[i].style.display = "none";
+      }
 	} 
 		
 }
