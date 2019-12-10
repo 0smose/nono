@@ -3,7 +3,7 @@
 
     var a = document.getElementsByClassName("iterator");
     for (var i = 0; i < a.length; i++) {
-      a[i].href = "#menu"+`${i+1}`;
+      a[i].href = "#menu"+(i+1);
   }
 
   var b = document.getElementsByClassName("image");
