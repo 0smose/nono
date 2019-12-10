@@ -47,7 +47,7 @@ var mySpan = document.getElementsByClassName("close");
 console.log(mySpan)
 
 
-for (let i = 0; i<getImages.length; i++) {
+for (var i = 0; i<getImages.length; i++) {
 	getImages[i].onclick = function() {
 		getModal[i].style.display = "block";
 		getModalContent[i].src = this.src;
