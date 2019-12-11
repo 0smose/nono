@@ -12,7 +12,6 @@
 //
 //= require rails-ujs
 //= require jquery.min
-//= require bootstrap
 //= require activestorage
 //= require turbolinks
 //= require static_pages/my_js
