@@ -42,19 +42,19 @@ for (var d = 0; d<getModalContent.length; d++) {
 
 // Get the <span> element that closes the modal
 var mySpan = document.getElementsByClassName("close");
+console.log(mySpan);
 
 
-
-for (var i = 0; i<getImages.length; i++) {
-	getImages[i].onclick = function() {
-		getModal[i].style.display = "block";
-		getModalContent[i].src = this.src;
-      mySpan[i].onclick = function() {
-      getModal[i].style.display = "none";
-      }
-	} 
+// for (var i = 0; i<getImages.length; i++) {
+// 	getImages[i].onclick = function() {
+// 		getModal[i].style.display = "block";
+// 		getModalContent[i].src = this.src;
+//       mySpan[i].onclick = function() {
+//       getModal[i].style.display = "none";
+//       }
+// 	} 
 		
-}
+// }
 
 
 
