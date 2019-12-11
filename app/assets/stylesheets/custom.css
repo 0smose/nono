@@ -282,20 +282,19 @@ h2 {
   transition: 0.3s;
 }
 
-.close:hover,
-.close:focus {
+/*.close:hover, .close:focus {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
 }
-
+*/
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
     width: 100%;
   }
-
 }
+
 .centered {
   position: absolute;
   top: 50%;
