@@ -7,7 +7,7 @@
                 <ul class ="nav nav-tabs border-light my-menu justify-content-center">
                     <% @category.each do |cat| %>
                          <% cat.images.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
-                            <li class="nav-item mt-3" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(image, class:"fit")%></a>
+                            <li class="nav-item mt-3" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(image, class:"fit")%></a></li>
                         <% end %>
                     <% end %>
                 </ul>
@@ -28,7 +28,7 @@
                                     <div class="row-flex " >
                                         <% cat.images.each do |image| %>
                                             <div class="column-flex">
-                                                <%= image_tag((image), class:" d-block  w-100 fit2 carrd-img-top ")  %>
+                                                <%= image_tag((image), class:" d-block  w-100 fit carrd-img-top")  %>
                                                 <div class="modal">
 
                                                 <!-- The Close Button -->
