@@ -29,8 +29,6 @@ for (var modal = 0; modal < getImages.length; modal++) {
 
 var getModal = document.querySelectorAll(".modal");
 
-
-
 for (var m = 0;m<getModal.length;m++){
     getModal[m].id = "myModal" + (m +1);
 }
@@ -44,7 +42,7 @@ for (var d = 0; d<getModalContent.length; d++) {
 
 // Get the <span> element that closes the modal
 var mySpan = document.getElementsByClassName("close");
-console.log(mySpan)
+
 
 
 for (var i = 0; i<getImages.length; i++) {
