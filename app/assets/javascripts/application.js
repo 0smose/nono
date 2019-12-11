@@ -13,8 +13,8 @@
 //= require rails-ujs
 //= require jquery
 //= require activestorage
-//= require turbolinks
 //= require static_pages/my_js
+//= require turbolinks
 
 
 
