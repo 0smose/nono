@@ -2,11 +2,6 @@
 margin: 0;
 }
 
-/*body { 
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}*/
 
 .slider {
 	position: absolute;
@@ -24,11 +19,11 @@ nav {
 	background-color: black;
 }
 
-a.nav-link{
+a.nav-link {
 	color:white;
 }
 
-section{
+section {
 	display: flex;
 	height: 100vh;
 	justify-content: center;
@@ -78,17 +73,6 @@ h2 {
 }
 
 
-/*.content {
-  flex: 1 0 auto;
-}
-.page-footer {
-	background-color: black;	
-  	left: 0;
-  	bottom: 0;
-  	width: 100%;
-
-}*/
-
 
 .photo {
 	height: 100px;
@@ -126,7 +110,7 @@ h2 {
 	color: white;
 }
 
-.landing-image-container{
+.landing-image-container {
 	 
 	 height: 100%;
 	
@@ -136,6 +120,7 @@ h2 {
 	width: 100%;
    
 }
+
 .section-landing {
 	height: 100vh;
 	overflow: hidden;
@@ -236,7 +221,9 @@ h2 {
   transition: 0.3s;
 }
 
-.carrd-img-top:hover {opacity: 0.7;}
+.carrd-img-top:hover {
+  opacity: 0.7;
+}
 
 /* The Modal (background) */
 .modal {
