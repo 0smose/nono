@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :check_if_admin
+  # before_action :check_if_admin
 
   def index
     @category = Category.all
@@ -47,12 +47,12 @@ class CategoriesController < ApplicationController
   end
 
  
-  def check_if_admin
-    if current_user.id_admin == false
-      flash[:error] = "Vous n'êtes pas un administrateur !"
-      redirect_to root_path
-    end
-  end
+  # def check_if_admin
+  #   if current_user.id_admin == false
+  #     flash[:error] = "Vous n'êtes pas un administrateur !"
+  #     redirect_to root_path
+  #   end
+  # end
 
   def delete_image_attachment
     @category = Category.find(params[:category_id])
