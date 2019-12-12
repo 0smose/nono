@@ -7,7 +7,8 @@
                 <ul class ="nav nav-tabs border-light my-menu justify-content-center">
                     <% @category.each do |cat| %>
                          <% cat.images.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
-                            <li class="nav-item mt-3" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(image, class:"fit")%></a></li>
+                            <li class="nav-item mt-4 ml-3 mr-2" style="" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(image, class:"fit")%></a>
+                                <p class="menu-name"><%= cat.name %></p></li>
                         <% end %>
                     <% end %>
                 </ul>
@@ -21,8 +22,8 @@
                 <div class="tab-content">
                     <% @category.each do |cat| %>
                         <div id ="" class ="tab-pane fade image ">
-                            <h3 class="mt-5 mb-5 text-center"><%=cat.name%></h3>
-                            <p class="mt-5 mb-5 text-center"><%=cat.description%></p>
+                            <h1 class="mt-5 mb-5 text-center"><%=cat.name%></h1>
+                            <p class="container mb-5" style="justify-content: left;"><%=cat.description%></p>
                             <div class="container">
                                 <div class="container-fluid2 ">    
                                     <div class="row-flex " >
@@ -35,7 +36,7 @@
                                                 <span class="close">&times;</span>
 
                                                 <!-- Modal Content (The Image) -->
-                                                <img class="modal-content" id="" style="width: 100% height: 100%; overflow-y: scroll;">
+                                                <img class="modal-content" id="" >
 
                                                 <!-- Modal Caption (Image Text) -->
                                                 <div class="captions" id=""></div>

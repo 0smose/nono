@@ -1,11 +1,12 @@
-<div class="row">
-	<div class="col ml-5">
-		<%= link_to '+', new_admins_article_path, style:"font-size:50px;" %>
+<div class=" container-fluid margin-footer">
+	<div class="row">
+		<div class="col ml-5">
+			<%= link_to '+', new_admins_article_path, style:"font-size:50px;" %>
+		</div>
 	</div>
-</div>
 
-<div class="container">
-	<% @articles.each do |article| %>
+	<div class="container">
+		<% @articles.each do |article| %>
 		<div class="row">
 			<div class="col col-12">
 				<div class="card ml-5 mr-5 mb-5">
@@ -20,13 +21,14 @@
 							<li><p class="card-text"> Tarif : <%= article.price %> € </p></li>
 							<li><p><%= article.category %></p></li>
 						</ul>
-					<div class=" text-center">		
-						<%= link_to "Supprimer", admins_article_path(article.id), method: 'delete',class:"btn btn-danger" %> 
-						<%= link_to "Éditer", edit_admins_article_path(article.id), class:"btn btn-info" %> 
-					</div>
+						<div class=" text-center">		 
+							<%= link_to "Éditer", edit_admins_article_path(article.id), class:"btn btn-info" %> 
+							<%= link_to "Supprimer", admins_article_path(article.id), method: 'delete',class:"btn btn-danger" %>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>		
-	<% end %>
+		<% end %>
+	</div>
 </div>

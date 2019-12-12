@@ -15,18 +15,6 @@
             <li class="list-group-item bg-transparent px-0">
              <i class="fas fa-sticky-note text-primary"></i> <%=link_to "Edition de catalogues", admins_catalogues_path, class: 'text-default' %>
             </li>
-            <li class="list-group-item bg-transparent px-0 dropdown">
-            <i class="fas fa-sticky-note text-primary"></i> 
-
-            <button class="dropdown-toggle btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Édition de photo
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <% @categories.each do |cat| %>
-                    <button class="dropdown-item" type="button"><%= link_to cat.name, category_path(cat.id) %></button>
-                <% end %>       
-            </div>
-            </li>
         </ul>
     </div>
 </div>

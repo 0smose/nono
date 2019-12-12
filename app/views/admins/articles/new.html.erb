@@ -1,40 +1,38 @@
-<section>
-  <div class="container">
+<div class="container margin-footer">
     <div class="row">
-      <div class="col offset-md-3 col-md-8 mx-auto text-dark">  
-        <%= render 'articles/error_messages' %>
+        <div class="col offset-md-3 col-md-8 mx-auto text-dark">  
+            <%= render 'articles/error_messages' %>
 
-        <h2 class="mt-5">Créer un article</h2>
+            <h2 class="mt-5">Créer un article</h2>
         <!-- Zone du formulaire -->
-        <%= form_tag url_for(action: 'create'), method: "post", class: "mt-4 " do %>
+            <%= form_tag url_for(action: 'create'), method: "post", class: "mt-4 " do %>
 
-          <%= label_tag 'Titre : ', nil, class: "font-weight-bold " %>
-          <%= text_area_tag 'title', @article.title, placeholder:"Titre", class: "form-control mb-4" %>
+            <%= label_tag 'Titre : ', nil, class: "font-weight-bold " %>
+            <%= text_area_tag 'title', @article.title, placeholder:"Titre", class: "form-control mb-4" %>
 
-          <%= label_tag 'Son contenu :', nil, class: "font-weight-bold  " %>
-          <%= text_area_tag 'body', @article.body, placeholder: "Écris ton article ici", class: "form-control mb-4" %>
+            <%= label_tag 'Son contenu :', nil, class: "font-weight-bold  " %>
+            <%= text_area_tag 'body', @article.body, placeholder: "Écris ton article ici", class: "form-control mb-4" %>
 
-          <%= label_tag 'Public cible:', nil, class: "font-weight-bold  " %>
-          <%= text_area_tag 'public', @article.public, placeholder: "Public cible", class: "form-control mb-4" %>
+            <%= label_tag 'Public cible:', nil, class: "font-weight-bold  " %>
+            <%= text_area_tag 'public', @article.public, placeholder: "Public cible", class: "form-control mb-4" %>
 
-          <%= label_tag 'Nombre de personne :', nil, class: "font-weight-bold  " %>
-          <%= text_area_tag 'number', @article.number, placeholder: "entre un nombre", class: "form-control mb-4" %>
+            <%= label_tag 'Nombre de personne :', nil, class: "font-weight-bold  " %>
+            <%= text_area_tag 'number', @article.number, placeholder: "entre un nombre", class: "form-control mb-4" %>
 
-          <%= label_tag 'Matériel logistique :', nil, class: "font-weight-bold  " %>
-          <%= text_area_tag 'equipment', @article.equipment, placeholder: "Matériel", class: "form-control mb-4" %>
+            <%= label_tag 'Matériel logistique :', nil, class: "font-weight-bold  " %>
+            <%= text_area_tag 'equipment', @article.equipment, placeholder: "Matériel", class: "form-control mb-4" %>
 
-          <%= label_tag 'Durée :', nil, class: "font-weight-bold  " %>
-          <%= text_area_tag 'duration', @article.duration, placeholder: "Entre une durée en heure", class: "form-control mb-4" %>
+            <%= label_tag 'Durée :', nil, class: "font-weight-bold  " %>
+            <%= text_area_tag 'duration', @article.duration, placeholder: "Entre une durée en heure", class: "form-control mb-4" %>
 
-          <%= label_tag 'Tarif :', nil, class: "font-weight-bold  " %>
-          <%= text_area_tag 'price', @article.price, placeholder: "Entre un nombre ", class: "form-control mb-4" %>
+            <%= label_tag 'Tarif :', nil, class: "font-weight-bold  " %>
+            <%= text_area_tag 'price', @article.price, placeholder: "Entre un nombre ", class: "form-control mb-4" %>
 
-          <%= label_tag 'Atelier/cours ou article ? :', nil, class: "font-weight-bold mt-3" %>
-                <%= select_tag 'category',options_for_select(["Atelier/cours", "Article"]), class: "form-control" %>
+            <%= label_tag 'Atelier/cours ou article ? :', nil, class: "font-weight-bold mt-3" %>
+            <%= select_tag 'category',options_for_select(["Atelier/cours", "Article"]), class: "form-control" %>
 
-          <%= submit_tag "Créer l'article", class: "btn btn-primary mb-3 mt-3" %>
-        <%end %>
-      </div>
+            <%= submit_tag "Créer l'article", class: "btn btn-primary mb-3 mt-3 form-control" %>
+            <%end %>
+        </div>
     </div>
-  </div>
-</section>
+</div>

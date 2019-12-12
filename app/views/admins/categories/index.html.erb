@@ -1,7 +1,8 @@
-<div class="container mt-5 ">
+<div class="container margin-footer mt-5 ">
 		<%= link_to '+', new_category_path, class: ' btn btn-primary mb-5', style: "font-size: 30px;" %>
 	<% @categories.each do |cat| %>
 		<div class="card mb-5 ">
+			<div class="card-body">
 			<div class="card-title text-center ">
 				<%= cat.name %>
 			</div>			
@@ -15,10 +16,11 @@
 		
 		</div>
 
-		</div>
 		 <div class="my-btn-display mb-5 mt-5">
-			<%= link_to "Éditer", category_path(cat.id), class: "btn my-btn btn-primary " %>
+			<%= link_to "Éditer", category_path(cat.id), class: "btn my-btn btn-info " %>
 			<%= link_to "Supprimer", category_path(cat.id), method: :delete, data: {confirm: "are you sure ?"}, class: "btn my-btn btn-danger  " %>
 			</div>
+					</div>
+		</div>
 	<%end %>
 </div>

@@ -1,5 +1,4 @@
-<section>
-<div class="container-fluid">
+<div class="container-fluid margin-footer mx-auto">
 	<h3 class="text-center mt-5 mb-5">Ajout de photo ?</h3>
 	<div class="row">
 		<div class="col col-9">
@@ -23,12 +22,12 @@
 	</div>
 
 	<div class="row">
+
 		<% @category.images.each do |image| %>
 			<div class="col-2 mt-5 ml-5 mr-5">
 				<%= image_tag((image),  class:"mt-2 ml-2 fit") %>
-				<%= link_to "X", category_delete_image_attachment_path(@category.id, image.id), method: "delete" %>
+				<%= link_to "X", category_delete_image_attachment_path(@category.id, image.id), method: "delete", data: {confirm: "are you sure ?"} %>
 			</div>
 		<% end %>
  	</div>
 </div>
-</section>
