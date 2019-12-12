@@ -1,4 +1,4 @@
-<section id="section-1">
+<div class="container-fluid margin-footer">
 	<div class="container mt-5 mb-5">
 		<h2>Qui suis-je</h2>
 
@@ -13,29 +13,29 @@
 			</div>
 		</div>
 	</div>
-</section>
 
-<section id="section-2">
+
+
 	<div class="container mt-5 mb-5">
 		<h2> Actualités </h2>
 		<% @articles.each do |article| %>
-		<div class="row">
-			<div class="col col-12">
-				<div class="card mt-3 ml-5 mr-5 mb-5">
-					<div class="card-body">
-						<b><h3 class="card-title text-center mt-3 mb-3"> <%= article.title %> </h3></b>
-						<p class="card-text"> <%= article.body %> </p>
-						<ul>
-							<li><p class="card-text">Public cible : <%= article.public %> </p></li>
-							<li><p class="card-text">Nombre de personne : <%= article.number %> </p></li>
-							<li><p class="card-text">Matériel logistique : <%= article.equipment %> </p></li>
-							<li><p class="card-text"> Durée : <%= article.duration %> heure </p></li>
-							<li><p class="card-text">Tarif : <%= article.price %> € </p></li>
-						</ul>				
+			<div class="row">
+				<div class="col col-12">
+					<div class="card mt-3 ml-5 mr-5 mb-5">
+						<div class="card-body">
+							<b><h3 class="card-title text-center mt-3 mb-3"> <%= article.title %> </h3></b>
+							<p class="card-text"> <%= article.body %> </p>
+							<ul>
+								<li><p class="card-text">Public cible : <%= article.public %> </p></li>
+								<li><p class="card-text">Nombre de personne : <%= article.number %> </p></li>
+								<li><p class="card-text">Matériel logistique : <%= article.equipment %> </p></li>
+								<li><p class="card-text"> Durée : <%= article.duration %> heure </p></li>
+								<li><p class="card-text">Tarif : <%= article.price %> € </p></li>
+							</ul>				
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>		
-	<% end %>
+			</div>		
+		<% end %>
 	</div>
-</section>
+</div>

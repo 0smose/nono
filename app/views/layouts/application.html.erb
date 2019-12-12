@@ -18,15 +18,18 @@
 
   </head>
 
-<body class="page-wrap">
+<body class="Site">
 
     <%= render 'layouts/navbar' unless @disable_nav %>
+
+
 
     <!-- Flash messages -->
     
     <%= render 'layouts/flash' %>
 
     <%= yield %>
+
 
     <%= render 'layouts/footer' unless @disable_nav %>
     
@@ -44,3 +47,4 @@
 
  
 </html>
+ 

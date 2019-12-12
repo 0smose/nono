@@ -1,66 +1,59 @@
-
-    <div class="section mb-5 test1">
-        <div class="container-fluid	">
-            <div class="row">
-                <div class="col col-12">
-                    <ul class ="nav nav-tabs border-light my-menu justify-content-center">
-                        <% @catalogues.each do |cat| %>
-                        <% cat.pictures.sort_by{|t| - t.created_at.to_i}.first(1).each do |picture| %>
+ <!-- menu de l'exposition -->
 
 
-                        <li class="nav-item mt-3" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(picture, class:" fit")%></a>
+ <div class="container-fluid margin-footer">
+    <div class="row">
+        <div class="col col-12">
+            <ul class ="nav nav-tabs border-light my-menu justify-content-center">
+                <% @catalogues.each do |cat| %>
+                    <% cat.pictures.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
+                        <li class="nav-item mt-3" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(image, class:"fit")%></a>
                         </li>
-
-                        <% end %>
-                        <% end %>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row ">
-                <div class="col col-12">
-                    <div class="tab-content">
-                        
-                        <% @catalogues.each do |cat| %>
-                        <div id ="" class ="tab-pane fade image ">
-                            <h3 class="mt-5 mb-5 text-center"><%=cat.name%></h3>
-                            <p class="mt-5 mb-5 text-center"><%=cat.description%></p>
-
-                            <div class="flex" >
-                                <div class="card border-light" style="max-width: 18rem;">
-                                    <% cat.pictures.each do |picture| %>
-                                    <%= image_tag((picture), class:"mt-1 ml-1 mb-1 mr-1 d-block w-100 card-img-top ")  %>
-                                    <% end %>  
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <% end %>
-                        
-                    </div>
-                </div>
-            </div>
-
+                    <% end %>
+                <% end %>
+            </ul>
         </div>
     </div>
 
+    <!-- expo + modals -->
+
+    <div class="row ">
+        <div class="col col-12">
+            <div class="tab-content">
+                <% @catalogues.each do |cat| %>
+                    <div id ="" class ="tab-pane fade image ">
+                        <h3 class="mt-5 mb-5 text-center"><%=cat.name%></h3>
+                        <p class="mt-5 mb-5 text-center"><%=cat.description%></p>
+                        <div class="container">
+                            <div class="container-fluid2 ">    
+                                <div class="row-flex " >
+                                    <% cat.pictures.each do |image| %>
+                                        <div class="column-flex">
+                                            <%= image_tag((image), class:" d-block  w-100 fit carrd-img-top")  %>
+                                             <div class="modal">
+
+                                        <!-- The Close Button -->
+                                                <span class="close">&times;</span>
+
+                                        <!-- Modal Content (The Image) -->
+                                                <img class="modal-content" id="" style="width: 100% height: 100%; overflow-y: scroll;">
+
+                                        <!-- Modal Caption (Image Text) -->
+                                                <div class="captions" id=""></div>
+                                            </div>
+                                        </div>
+                                    <% end %> 
+                                </div> 
+                            </div>
+                        </div>                       
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-
-<script>
-	var a = document.getElementsByClassName("iterator");
-	for (var i = 0; i < a.length; i++) {
-        a[i].href = "#menu"+`${i+1}`;
-    }
-
-    var b = document.getElementsByClassName("image");
-
-    for (var e = 0; e <b.length; e++) {
-       b[e].id = "menu" + (e + 1); 
-   }
-
-
-</script>
 
 
 

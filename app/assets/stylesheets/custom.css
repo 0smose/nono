@@ -1,9 +1,9 @@
-* { 
+/** { 
 margin: 0;
-}
+}*/
 
 
-.slider {
+/*.slider {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -12,7 +12,7 @@ margin: 0;
 	background: linear-gradient(to left, #575554, black );
 	z-index: -1;
 }
-
+*/
 nav {
 	display: grid;
 	min-height: 10vh;
@@ -22,14 +22,14 @@ nav {
 a.nav-link {
 	color:white;
 }
-
+/*
 section {
 	display: flex;
 	height: 100vh;
 	justify-content: center;
 	align-items: center;
 }
-
+*/
 
 
 p {
@@ -42,13 +42,13 @@ h2 {
 	text-align: center;
 }
 
-.photo-expo {
+/*.photo-expo {
 	width: 300px;
 	height: auto;
 	border-style: solid;
 	border-color: black;
 	border-width: 1px;
-}
+}*/
 
 .card-body {
 
@@ -58,20 +58,6 @@ h2 {
 .card-title {
 	font-size: 20px;
 }
-
-.new-article {
-	font-size: 40px;
-	
-	text-align: right;
-}
-
-
-#home-img{
-	width:100%;
-	height: auto;
-	
-}
-
 
 
 .photo {
@@ -101,6 +87,8 @@ h2 {
 
 }
 
+/*LANDING PAGE*/
+
 #landing-title {
 	position: absolute;
 	top: 50%;
@@ -125,6 +113,8 @@ h2 {
 	height: 100vh;
 	overflow: hidden;
 }
+
+/* Admin */
 
 
 .my-btn {
@@ -191,13 +181,6 @@ h2 {
 
 /* *************************************** */
 
-.footer {
-  background-color: #F6F8F7; 
-  bottom :0;
-  width: 100%;
-  position: relative;
-
-}
 
 
 .fit {
@@ -290,14 +273,40 @@ h2 {
   }
 }
 
-.centered {
+/*.centered {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-.container-test {
+}*/
+/*.container-test {
   position: relative;
   text-align: center;
   color: white;
 } 
+*/
+
+/* FOOTER */
+
+
+html {
+    position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 160px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  width: 100%;
+  background-color: red;
+}
+
+.margin-footer{
+  margin-bottom: 20vh;
+}
