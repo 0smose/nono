@@ -1,16 +1,19 @@
+<%= render 'admins/dashboard' %>
 <div class="container margin-footer mt-5 ">
 		<%= link_to '+', new_category_path, class: ' btn btn-primary mb-5', style: "font-size: 30px;" %>
+		<div class="row">
+			<div class="col col-12">
 	<% @categories.each do |cat| %>
-		<div class="card mb-5 ">
-			<div class="card-body">
+		<div class="card  mb-5 ">
+			<div class="card-body ">
 			<div class="card-title text-center ">
 				<%= cat.name %>
-			</div>			
-			<div class="row">
+			</div>		
+			<div class="row-flex">
 				
 			<% cat.images.each do |image| %>
-			<div class="col col-3 mb-3">
-			<%= image_tag(image, class:"fit") %>
+			<div class="column-flex">
+			<%= image_tag(image, class:"d-block  w-100 fit ") %>
 			</div>
 		<% end %>
 		
@@ -23,4 +26,6 @@
 					</div>
 		</div>
 	<%end %>
+	</div>
+		</div>
 </div>

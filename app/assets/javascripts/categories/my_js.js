@@ -1,6 +1,12 @@
 
     //  bootstrap menu 
 
+    var scroll = document.getElementsByClassName("fit");
+    for (var o = 0; o < scroll.length; o++) {
+      scroll[o].onclick = function() {
+        window.scrollTo(0, 500);
+      }
+    }
     var a = document.getElementsByClassName("iterator");
     for (var i = 0; i < a.length; i++) {
       a[i].href = "#menu"+(i+1);

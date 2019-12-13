@@ -59,7 +59,9 @@ h2 {
 	transform: translateY(-50%);
 	transform: translateX(-50%);
 	color: white;
+  text-decoration: none;
 }
+
 
 .landing-image-container {
 	 
@@ -99,7 +101,14 @@ h2 {
     margin: auto;
 }
 
+.admin-image-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
  /*          RESPONSIVE GALERY              */
+
 
 
 .menu-name {
