@@ -6,13 +6,17 @@
 					<div class="card-body">
 						<b><h3 class="card-title text-center mt-3 mb-3"> <%= article.title %> </h3></b>
 						<p class="card-text"> <%= article.body %> </p>
+						<div id="" class=" my-btn btn btn-sm btn-outline-primary click mb-3">En savoir plus</div>
+
+						<div id ="" class="myDIV" style="display: none;">					
 						<ul>
 							<li><p class="card-text">Public cible : <%= article.public %> </p></li>
 							<li><p class="card-text">Nombre de personne : <%= article.number %> </p></li>
 							<li><p class="card-text">Matériel logistique : <%= article.equipment %> </p></li>
 							<li><p class="card-text"> Durée : <%= article.duration %> heure </p></li>
 							<li><p class="card-text">Tarif : <%= article.price %> € </p></li>
-						</ul>				
+						</ul>
+						</div>				
 					</div>
 				</div>
 			</div>

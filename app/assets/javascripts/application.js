@@ -12,7 +12,6 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require categories/my_js
 //= require_tree .
 
 

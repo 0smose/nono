@@ -11,6 +11,7 @@ class Admins::CataloguesController < ApplicationController
 	def create
 		@catalogue = Catalogue.create!(catalogue_params)
 		redirect_to admins_catalogue_path(@catalogue.id)
+		flash[:succes] = "Tu as bien crée le catalogue"
 	end
 
 	def edit
@@ -27,7 +28,7 @@ class Admins::CataloguesController < ApplicationController
     @catalogue = Catalogue.find(params[:id])
     if @catalogue.destroy
       redirect_to admins_catalogues_path
-      flash[:succes] = "Tu as bien supprimé le catalogue"
+      flash[:success] = "Tu as bien supprimé le catalogue"
     else
       flash[:alert] = "Un problème est survenu, recommence :p"
       render :edit

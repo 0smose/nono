@@ -7,22 +7,17 @@ class Admins::ArticlesController < ApplicationController
 
 	def new 
 		@article = Article.new
-		@category = Category.new
-
 	end
 
 	def create
-		@category = Category.new
-		@category = Category.create!(name: params[:name])
-		if @category.save
-			redirect_to category_path(@category)
-		end
+
 		@article = Article.new(user_id: current_user.id, title: params[:title], body: params[:body], category: params[:category],
 			public: params[:public], number: params[:number], equipment: params[:equipment], duration: params[:duration],
 			price: params[:price])
 		if @article.save
 
 			flash[:success] = "Votre article a bien été crée."
+			redirect_to admins_articles_path
 		else
 			render :new
 		end

@@ -1,12 +1,14 @@
 
     //  bootstrap menu 
 
-    var scroll = document.getElementsByClassName("fit");
+    var scroll = document.getElementsByClassName("my-scroll");
     for (var o = 0; o < scroll.length; o++) {
-      scroll[o].onclick = function() {
-        window.scrollTo(0, 500);
-      }
+      (scroll[o]).onclick = function() {
+        
+        window.scrollTo(0, 650);
+      } 
     }
+
     var a = document.getElementsByClassName("iterator");
     for (var i = 0; i < a.length; i++) {
       a[i].href = "#menu"+(i+1);
@@ -61,6 +63,7 @@ for (var x = 0; x<getImages.length; x++) {
       mySpan[tg].onclick = function() {
         for (var l = 0;l<getModal.length;l++){
           getModal[l].style.display = "none";
+          
         }
       }
     }

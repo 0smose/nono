@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.create!(category_params)
     redirect_to @category
-    flash[:succes] = "Tu as bien crée la catégorie"
+    flash[:success] = "Tu as bien crée la catégorie"
 
   end
 
@@ -39,7 +39,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     if @category.destroy
       redirect_to admins_categories_path
-      flash[:succes] = "Tu as bien supprimé la catégorie"
+      flash[:success] = "Tu as bien supprimé la catégorie"
     else
       flash[:alert] = "Un problème est survenu, recommence :p"
       render :edit

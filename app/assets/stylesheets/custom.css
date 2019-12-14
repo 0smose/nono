@@ -1,12 +1,13 @@
 nav {
 	display: grid;
-	min-height: 10vh;
+	min-height: 15vh;
 	background-color: black;
-}
+}   
 
 a.nav-link {
 	color:white;
 }
+
 
 
 p {
@@ -32,9 +33,9 @@ h2 {
 
 .center {
 	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
-  	width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 #logo {
@@ -83,10 +84,9 @@ h2 {
 
 
 .my-btn {
-	width:200px;
-	height: auto;
-
+	border-radius: 25px !important;
 }
+
 
 .my-btn-display {
 	display: block;
@@ -276,13 +276,13 @@ body {
   margin-bottom: 160px;
 }
 
-.footer {
+footer {
   color: black;
   display: grid;
   position: absolute;
   bottom: 0;
   /* Set the fixed height of the footer here */
-  height: 60px;
+  height: 80px;
   width: 100%;
   background-color: #D6D6D6;
 }
@@ -294,3 +294,5 @@ body {
 .margin-footer{
   margin-bottom: 20vh;
 }
+
+/* Article */
