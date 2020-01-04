@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ">
-  <%= link_to "Noémie Photo", root_path, class: "navbar-brand", style: "color:white;" %>
+  <%= link_to root_path do %>
+  <%= image_tag("landing_logo.jpg", class: "navbar-brand", style: "width: 60px; margin-left:50px;") %>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="true" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

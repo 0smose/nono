@@ -1,36 +1,46 @@
- <!-- menu de l'exposition -->
+<!-- Description de l'expo  -->
 
-
-    <div class="container-fluid margin-footer">
-        <div class="row">
-            <div class="col col-12">
-                <ul class ="nav nav-tabs border-light my-menu justify-content-center">
-                    <% @category.each do |cat| %>
-                         <% cat.images.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
-                            <li class="nav-item mt-4 ml-3 mr-2 my-scroll" style="" ><a class="iterator" data-toggle="tab" href=""><%= image_tag(image, class:"fit ")%></a>
-                                <p class="menu-name"><%= cat.name %></p></li>
-                        <% end %>
-                    <% end %>
-                </ul>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col col-12">
+            <p class="mt-5 mb-5 mx-auto">Cras in sem vitae urna facilisis egestas a at lorem. Duis et mi sit amet felis lobortis rutrum non non est. Donec tincidunt ut nisl sit amet tincidunt. Nulla sollicitudin erat a magna consequat dapibus. Curabitur malesuada pharetra augue varius molestie. Sed hendrerit faucibus auctor. Curabitur non luctus libero, sed facilisis libero. Proin tempor accumsan blandit. Proin hendrerit at quam id facilisis. Morbi cursus neque vitae lacus bibendum ullamcorper. Mauris mattis mattis risus sit amet feugiat. Pellentesque eu dui mattis, cursus eros non, lacinia eros. Suspendisse fringilla arcu in neque auctor ullamcorper.</p>
         </div>
+    </div>
+</div>
 
-<!-- expo + modals -->
+<!-- menu de l'exposition -->
 
-        <div class="row ">
-            <div class="col col-12">
-                <div class="tab-content">
-                    <% @category.each do |cat| %>
-                        <div id ="" class ="tab-pane fade image ">
-                            <h1 class="mt-5 mb-5 text-center"><%=cat.name%></h1>
-                            <p class="container mb-5" style="justify-content: left;"><%=cat.description%></p>
-                            <div class="container">
-                                <div class="container-fluid2 ">    
-                                    <div class="row-flex " >
-                                        <% cat.images.each do |image| %>
-                                            <div class="column-flex">
-                                                <%= image_tag((image), class:" d-block  w-100 fit  carrd-img-top")  %>
-                                                <div class="modal">
+
+<div class="container-fluid margin-footer">
+    <div class="row">
+        <div class="col col-12">
+            <ul class ="nav nav-tabs my-border my-menu justify-content-center">
+                <% @category.each do |cat| %>
+                    <% cat.images.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
+                        <li class="nav-item mt-4 ml-3 mr-2 my-scroll" style="" ><a class="iterator" data-toggle="tab" href=""><%= image_tag(image, class:"fit")%></a>
+                        <p class="menu-name"><%= cat.name %></p></li>
+                    <% end %>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+
+        <!-- expo + modals -->
+
+    <div class="row ">
+        <div class="col col-12">
+            <div class="tab-content">
+                <% @category.each do |cat| %>
+                    <div id ="" class ="tab-pane fade image ">
+                        <h1 class="mt-5 mb-5 text-center"><%=cat.name%></h1>
+                        <p class="container mb-5" style="justify-content: left;"><%=cat.description%></p>
+                        <div class="container">
+                            <div class="container-fluid2 ">    
+                                <div class="row-flex " >
+                                    <% cat.images.each do |image| %>
+                                        <div class="column-flex">
+                                            <%= image_tag((image), class:" d-block  w-100 fit  carrd-img-top")  %>
+                                            <div class="modal">
 
                                                 <!-- The Close Button -->
                                                 <span class="close">&times;</span>
@@ -39,19 +49,21 @@
                                                 <img class="modal-content" id="" >
 
                                                 <!-- Modal Caption (Image Text) -->
-                                                <div class="captions" id=""></div>
+                                                <div class="captions" id="">
+                                                    
                                                 </div>
                                             </div>
-                                        <% end %> 
-                                    </div> 
-                                </div>
-                            </div>                       
-                        </div>
-                    <% end %>
-                </div>
+                                        </div>
+                                    <% end %> 
+                                </div> 
+                            </div>
+                        </div>                       
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
+</div>
 
 
 

@@ -1,12 +1,14 @@
-<div class="container margin-footer">
+<div class="container margin-footer" style="background-color: initial;">
+	<div class="container-fluid pl-5 pr-5">
+	<p class=" mt-5 mb-5" style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fames ac turpis egestas integer eget. Eu sem integer vitae justo eget magna fermentum iaculis. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Sed libero enim sed faucibus turpis in eu mi bibendum. Amet nisl suscipit adipiscing bibendum. Montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada. Facilisis magna etiam tempor orci eu lobortis elementum nibh tellus. Blandit libero volutpat sed cras ornare arcu dui vivamus. Neque ornare aenean euismod elementum. Ornare arcu dui vivamus arcu felis bibendum ut tristique.</p></div>
 	<% @articles.each do |article| %>
 		<div class="row">
 			<div class="col col-12">
-				<div class="card mt-3 ml-5 mr-5 mb-5">
-					<div class="card-body">
+				<div class="card card-shadow mt-3 ml-5 mr-5 mb-5">
+					<div class="card-body card-body-article">
 						<b><h3 class="card-title text-center mt-3 mb-3"> <%= article.title %> </h3></b>
 						<p class="card-text"> <%= article.body %> </p>
-						<div id="" class=" my-btn btn btn-sm btn-outline-primary click mb-3">En savoir plus</div>
+						<div id="" class=" my-btn-article btn btn-sm btn-outline-primary click mb-3">En savoir plus</div>
 
 						<div id ="" class="myDIV" style="display: none;">					
 						<ul>
