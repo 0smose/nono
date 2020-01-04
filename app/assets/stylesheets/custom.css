@@ -1,12 +1,3 @@
-@font-face {
-  font-family: 'Jaapokki';
-  src: url('Jaapokki-font-package-1.0/Jaapokki-font-package-1.0/subtract/web/jaapokkisubtract-regular.ttf') format('truetype'); 
-}
-
-@font-face {
-  font-family: 'Maiandra';
-  src: url('MaiandraGDRegular/MaiandraGDRegular.ttf') format('truetype');
-}
 
 .test-title {
   font-family: 'Jaapokki';
