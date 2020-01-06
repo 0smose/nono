@@ -1,40 +1,7 @@
-
 <div class="landing-image-container">
-	<% if false %>	
-	<%= link_to categories_path do %>
-	<%= image_tag("landing.JPG", class: "landing-image") %>
-	<% end %>
-	<% end %>
-
 	<div>
 		<h1> <%= link_to "Noémie Blumet", categories_path, id: "landing-title", class:" test-title"%></h1>
-
-
 		<h2> <%= link_to "Photographie", categories_path, id: "landing-title2", class:" test-title"%></h2>
 	</div>
-
 </div>
-<!-- <script>
-	const titre = document.getElementById("landing-title");
-titre.style.position ="absolute";
-let il = 0;
-let dir = -1;
 
-
-
-function hautBas() {
-	if (il==600) {
-		dir = 1
-	} else if (il == 0) {
-		dir =-1
-	}
-	il+= -2 * dir;
-	titre.style.top = `${il}px`;
-	// titre.style.left = left;
-	requestAnimationFrame(hautBas);
-	
-
-}
-
-requestAnimationFrame(hautBas);
-</script> -->
