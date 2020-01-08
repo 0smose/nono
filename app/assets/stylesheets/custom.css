@@ -1,5 +1,5 @@
 
-.test-title {
+.title {
   font-family: 'Jaapokki';
 }
 
@@ -17,6 +17,9 @@ a.nav-link {
 	color:white;
 }
 
+a:hover {
+  text-decoration: none !important;
+}
 
 
 p {
@@ -93,37 +96,27 @@ h6 {
 
 #landing-title {
   color: #5F5852;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translateY(-50%);
-	transform: translateX(-50%);
-  text-decoration: none;
+  text-align: center;
 }
 #landing-title2 {
   color: #5F5852;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translateY(-50%);
-  transform: translateX(-50%);
-  text-decoration: none;
+  text-align: center;
 }
-
 
 .landing-image-container {
-	 
-   background-color: #E3E2E0;
-	 /*height: 100vh;
-   overflow: hidden;*/
-	
+  height: 100% !important;
+  padding: 0;
+  margin: 0;
+	display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: #E3E2E0;	
 }
 
-.landing-image {
-	width: 100%;
-  height: 100%;
-  object-fit: cover;
-   
+
+.logo {  
+  max-height: 250px;
 }
 
 /*.section-landing {
@@ -170,11 +163,11 @@ h6 {
   text-align: center; 
 }
 
- .container-fluid2 {
+/* .container-fluid2 {
  	box-sizing: border-box;
 
  }
-
+*/
 .row-flex {
   display: flex;
   flex-wrap: wrap;
@@ -237,37 +230,45 @@ h6 {
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  /*position: relative;*/ /* Stay in place */
+  display: inline-block; /* Hidden by default */
+  vertical-align: middle;
+  position: absolute; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
+   /* Location of the box */
+/*  left: 50%;
+  top: 50%;*/
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow-y: scroll !important; /* Enable scroll if needed */
+  overflow-y: hidden !important; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
 
+  
+/*  justify-content: center;*/
 }
 
 /* Modal Content (Image) */
 .modal-content {
+  /*vertical-align: middle !important;*/
+    max-height: 100vh;
+  /*  max-width: 100vh;*/
+    max-width: 30%;
+   position: absolute;
+   float: left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
+
+    /*object-fit: contain;*/
   border-style: solid !important;
   border-width: 15px !important;
   border-color: white !important;
   border-radius: 7px !important;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-}
+  /*position: absolute;*/
+  background-color: inherit;
 
+}
 
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -304,12 +305,7 @@ h6 {
   transition: 0.3s;
 }
 
-/*.close:hover, .close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-*/
+
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
   .modal-content {
