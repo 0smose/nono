@@ -4,7 +4,7 @@
  <div class="container-fluid margin-footer">
     <div class="row">
         <div class="col col-12">
-            <ul class ="nav nav-tabs border-light my-menu justify-content-center">
+            <ul class ="nav nav-tabs my-border my-menu justify-content-center">
                 <% @catalogues.each do |cat| %>
                     <% cat.pictures.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
                         <li class="nav-item mt-3" ><a class="iterator" data-toggle="tab" href="#menu"><%= image_tag(image, class:"fit")%></a>

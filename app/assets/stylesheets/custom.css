@@ -364,3 +364,8 @@ footer {
 .my-btn-article {
   border-radius: 25px !important;
 }
+
+ul .fit:hover  {
+  opacity: 0.7;
+
+}
