@@ -39,8 +39,15 @@
                                 <div class="row-flex " >
                                     <% cat.images.each do |image| %>
                                         <div class="column-flex">
-                                            <%= image_tag((image), class:" d-block  w-100 fit  carrd-img-top")  %>
+
+                                           
+
+                                            <%= link_to image do %>
+                                                <%= image_tag((image), class:" d-block  w-100 fit  carrd-img-top gallery-item")%>
+                                            <% end %>
                                         </div>
+
+                                        <% if false %>
                                             <div class="modal">
 
                                                 <!-- The Close Button -->
@@ -54,6 +61,7 @@
                                                     
                                                 </div>
                                             </div>
+                                        <% end %>
                                        
                                     <% end %> 
                                 </div> 
