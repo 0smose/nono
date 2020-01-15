@@ -158,10 +158,10 @@ h6 {
 }
 
 
-.menu-name {
+/*.menu-name {
   color: black;
   text-align: center; 
-}
+}*/
 
 /* .container-fluid2 {
  	box-sizing: border-box;
@@ -224,9 +224,9 @@ h6 {
   transition: 0.3s;
 }
 
-.carrd-img-top:hover {
+/*.carrd-img-top:hover {
   opacity: 0.7;
-}
+}*/
 
 /* The Modal (background) */
 .modal {
@@ -365,7 +365,48 @@ footer {
   border-radius: 25px !important;
 }
 
-ul .fit:hover  {
+/*ul .fit:hover  {
   opacity: 0.7;
 
+}
+*/
+
+.overlay {
+  position: absolute; 
+  bottom: -17px; 
+  background: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.55); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  height: calc(100% - 23px);
+  transition: .5s ease;
+  opacity:0;
+  
+  font-size: 20px;
+  padding: 10px;
+  padding-top: 30%;
+  text-align: center;
+}
+
+
+.my-test-overlay {
+  display: block;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.my-test-container {
+  position: relative;
+  width: 200px;
+ /* max-width: 300px;*/
+}
+
+
+.my-test-container:hover .overlay {
+  opacity: 1;
+}
+
+.my-overlay-container {
+  margin-bottom: 50px;
 }

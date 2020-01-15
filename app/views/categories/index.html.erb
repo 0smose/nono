@@ -12,13 +12,15 @@
 
 
 <div class="container-fluid margin-footer">
-    <div class="row">
+    <div class="row ">
         <div class="col col-12">
             <ul class ="nav nav-tabs my-border my-menu justify-content-center">
                 <% @category.each do |cat| %>
                     <% cat.images.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
-                        <li class="nav-item mt-4 ml-3 mr-2 my-scroll" style="" ><a class="iterator" data-toggle="tab" href=""><%= image_tag(image, class:"fit")%></a>
-                        <p class="menu-name"><%= cat.name %></p></li>
+                    <div class="my-test-container">
+                        <li class="nav-item mt-4 ml-3 mr-2 my-scroll" style="" ><a class="iterator" data-toggle="tab" href=""><%= image_tag(image, class:" my-test-overlay")%>
+                        <p class="menu-name overlay"><%= cat.name %></p></a></li>
+                    </div>
                     <% end %>
                 <% end %>
             </ul>
