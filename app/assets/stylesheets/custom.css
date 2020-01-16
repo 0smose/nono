@@ -384,7 +384,7 @@ footer {
   opacity:0;
   font-size: 30px;
   text-align: center;
-  padding-top: 159px;
+  padding-top: 139px;
 }
 
 
@@ -422,8 +422,7 @@ footer {
   z-index: 99;
   border: none;
   outline: none;
-  background-color: transparent;
-  color: #21201E;
+  color: #B4B4B4;
   font-size: 60px;
   cursor: pointer;
   padding: 15px;

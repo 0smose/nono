@@ -1,13 +1,12 @@
 
     //  bootstrap menu 
 
-    var scroll = document.getElementsByClassName("my-scroll");
-    for (var o = 0; o < scroll.length; o++) {
-      (scroll[o]).onclick = function() {
-        
-        window.scrollTo(0, 650);
-      } 
-    }
+    // var scroll = document.getElementsByClassName("overlay");
+    // for (var o = 0; o < scroll.length; o++) {
+    //   (scroll[o]).onclick = function() {
+    //     window.scrollTo(0, 650);
+    //   } 
+    // }
 
     var a = document.getElementsByClassName("iterator");
     for (var i = 0; i < a.length; i++) {
@@ -49,12 +48,22 @@ function scrollFunction() {
 }
 
 // When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+
+$('.js-btn').click(() => {
+    $('html, body').animate({
+        scrollTop: $('.navbar').offset().top
+    }, 200);
+});
 
 
+
+    /*Scrolling effect on photo click  */
+    
+    $('.js--scroll').click(function () {
+        $('html, body').animate({scrollTop: $('.js--scroll-target').offset().top}, 1000);
+    });
+  
+    
 
  // ************************************** Modal ****************************************
 

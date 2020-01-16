@@ -79,3 +79,5 @@ gem 'jquery-rails', '>=1.20.4.0'
 gem "tabs_on_rails"
 gem 'dotenv-rails'
 gem 'magnific-popup-rails', '~> 1.1.0'
+
+
