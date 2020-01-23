@@ -13,12 +13,13 @@
 
 <div class="container margin-footer">
     <div class="row">
-            <ul class ="nav nav-tabs">
+        <div class="col col-12">
+            <ul class ="nav nav-tabs my-menu justify-content-center ">
                 <% @category.each do |cat| %>
                     <% cat.images.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
-                    <li class="my-test-container col-6 my-1 px-1">
+                    <li class="nav-item mt-4 ml-3 mr-2 my-test-container">
                   
-                        <a class="iterator" data-toggle="tab" href=""><%= image_tag(image, class:" my-test-overlay")%>
+                        <a class="iterator" data-toggle="tab" href=""><%= image_tag(image, class:" fit my-test-overlay")%>
                            
                         <p class="overlay js--scroll"><%= cat.name %></p>
                            
@@ -29,6 +30,7 @@
                     <% end %>
                 <% end %>
             </ul>
+        </div>
     </div>
 
         <!-- expo + modals -->

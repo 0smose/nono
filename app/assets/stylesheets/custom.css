@@ -120,7 +120,8 @@ h6 {
 */
 
 .logo {  
-  max-height: 250px;
+  height: 330px;
+  margin: -30px 0px -30px 0px;
 }
 
 /*.section-landing {
@@ -372,43 +373,41 @@ footer {
 
 /*  Mangific popup      */
 .overlay {
-  position: absolute; 
-  bottom: 0; 
-  background: rgb(255, 255, 255);
-  background: rgba(227, 226, 224, 0.90); 
-  color: #21201E; 
-  width: 100%;
+  opacity: 0;
+  background-color: rgba(239,239,239, 0.8);
+  color: #343a40;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 100%;
-  margin: 0;
-  transition: .5s ease;
-  opacity:0;
-  font-size: 30px;
   text-align: center;
-  padding-top: 139px;
+  padding-top: 60px;
 }
 
 
-.my-test-overlay {
+/*.my-test-overlay {
   width: 100%;
   max-height: 350px; 
   height: auto;
   object-fit: cover;
-}
+}*/
 
 .my-test-container {
   position: relative;
-  max-height: 350px; 
-  object-fit: cover;
- /* max-width: 300px;*/
+  
 }
 
 
-.my-test-container:hover .overlay {
+.my-test-container:hover .overlay{
   opacity: 1;
 }
 
 .my-overlay-container {
   margin-bottom: 50px;
+
 }
 
 
