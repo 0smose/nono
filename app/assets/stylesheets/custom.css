@@ -14,13 +14,12 @@ nav {
 }
 
 a.nav-link {
-	color:white;
+	color:white !important;
 }
 
 a:hover {
   text-decoration: none !important;
 }
-
 
 p {
   font-family: 'Maiandra';
@@ -62,6 +61,10 @@ h6 {
   font-family: 'Jaapokki';
 }
 
+i {
+  color: white;
+  font-size: 30px;
+}
 .my-btn-article {
   font-family: 'Maiandra';
 }
@@ -101,10 +104,12 @@ h6 {
 #landing-title {
   color: #5F5852;
   text-align: center;
+  margin: auto;
 }
 #landing-title2 {
   color: #5F5852;
   text-align: center;
+  margin: auto;
 }
 
 /*.landing-image-container {
@@ -119,9 +124,13 @@ h6 {
 }
 */
 
-.logo {  
-  height: 330px;
+.logo-nav {  
+  height: 130px;
   margin: -30px 0px -30px 0px;
+}
+
+.logo-landing {
+  height: 330px;
 }
 
 /*.section-landing {
@@ -323,9 +332,11 @@ h6 {
 /* FOOTER */
 
 
+
+
 html {
     position: relative;
-  min-height: 100%;
+    min-height: 100%;
 
 }
 
@@ -410,26 +421,6 @@ footer {
 
 }
 
-
-/* back to top*/
-
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 120px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  color: #B4B4B4;
-  font-size: 60px;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
-}
-
-/* test animation landing*/
-
 .landing-image-container {
   position: absolute;
   top: 50%;
@@ -440,41 +431,6 @@ footer {
 
  }
 
-
-.landing-image-container:before  {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-top: 20px solid #5F5852;;
-  border-bottom: 20px solid #5F5852;;
-  box-sizing: border-box;
-  transform: scaleX(0);
-  transition: 1.5s;
- }
-
- .landing-image-container:hover:before {
-  transform: scaleX(1);
- }
-
- .landing-image-container:after  {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-left: 20px solid #5F5852;;
-  border-right: 20px solid #5F5852;;
-  box-sizing: border-box;
-  transform: scaleY(0);
-  transition: 1.5s;
- }
-
- .landing-image-container:hover:after {
-  transform: scaleY(1);
- }
+ .fa-arrow-up:before {
+    display: none;
+  }
