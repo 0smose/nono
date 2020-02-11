@@ -11,7 +11,7 @@ class Admins::CataloguesController < ApplicationController
 	def create
 		@catalogue = Catalogue.create!(catalogue_params)
 		redirect_to admins_catalogue_path(@catalogue.id)
-		flash[:succes] = "Tu as bien crée le catalogue"
+		flash[:success] = "Tu as bien crée le catalogue"
 	end
   def edit
     @catalogue = Catalogue.find(params[:id])
