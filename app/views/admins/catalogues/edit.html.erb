@@ -1,0 +1,32 @@
+<div class="container-fluid mx-auto margin-footer">
+	<h3 class="text-center mt-5 mb-5">Gestion de catalogue</h3>
+	<div class="row">
+		<div class="col col-9">
+			
+			<%= form_tag catalogue_pictures_path(@catalogue), method: "post", multipart: true do %>
+				<%= file_field_tag 'pictures[]', :multiple => true %>
+				<%= hidden_field_tag :catalogue, @catalogue.name	, params[:catalogue] || {} %>
+				<button type="button" ><%= submit_tag "upload" %></button>
+			<% end %>			
+		</div>
+
+		<div class="col-3">
+			<%= form_tag url_for(action: 'update'), method: "patch", class: "mt-4" do %>
+				<%= label_tag 'Quel sera son nom ? ', nil, class: "font-weight-bold" %>
+                <%= text_field_tag 'name', @catalogue.name, class: "form-control" %>
+                <%= label_tag 'description', nil, class: 'font-weight-bold mb-3' %>
+				<%= text_area_tag 'description', @catalogue.description, class: "form-control mb-3" %>
+				<%= submit_tag "Éditer le nom", class: "btn btn-primary mb-3 mt-3" %>
+  			<%end %>
+		</div>
+	</div>
+
+	<div class="row">
+		<% @catalogue.pictures.each do |picture| %>
+			<div class="col-2 mt-5 ml-5 mr-5">
+				<%= image_tag((picture),  class:"mt-2 ml-2 fit") %>
+				<%= link_to "X", catalogue_delete_image_attachment_path(@catalogue.id, picture.id), method: "delete", data: {confirm: "are you sure ?"} %>
+			</div>
+		<% end %>
+ 	</div>
+</div>

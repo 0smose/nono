@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :categories
     resources :catalogues
+    resources :texts
   end
 
 end

@@ -18,7 +18,7 @@
 		</div>
 		
 		 <div class="my-btn-display mb-5 mt-5">
-			<%= link_to "Éditer", admins_catalogue_path(cat.id), class: "btn my-btn btn-info " %>
+			<%= link_to "Éditer", edit_admins_catalogue_path(cat.id), class: "btn my-btn btn-info " %>
 			<%= link_to "Supprimer", admins_catalogue_path(cat.id), method: :delete, data: {confirm: "are you sure ?"}, class: "btn my-btn btn-danger  " %>
 			</div>
 			</div>

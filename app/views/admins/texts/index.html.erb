@@ -1,0 +1,24 @@
+<%= render 'admins/dashboard' %>
+<div class="container margin-footer mt-5 ">
+	<%= link_to '+', new_admins_text_path, class: ' btn btn-primary mb-5', style: "font-size: 30px;" %>
+		<div class="row">
+			<div class="col col-12">
+	<% @texts.each do |text| %>
+		<div class="card  mb-5 ">
+			<div class="card-body ">
+				<div class="card-title text-center ">
+					<%= text.name %>
+					<p class="card-text"> <%= text.description %> </p>
+			</div>		
+	
+
+		 <div class="my-btn-display mb-5 mt-5">
+			<%= link_to "Éditer", edit_admins_text_path(text.id), class: "btn my-btn btn-info " %>
+			<%= link_to "Supprimer", admins_text_path(text.id), method: :delete, data: {confirm: "are you sure ?"}, class: "btn my-btn btn-danger  " %>
+			</div>
+					</div>
+		</div>
+	<%end %>
+	</div>
+		</div>
+</div>

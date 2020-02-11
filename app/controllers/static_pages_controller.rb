@@ -18,6 +18,7 @@ class StaticPagesController < ApplicationController
 
 	def about_me
 		@articles = Article.where(category: "Article")
+		@text = Text.find_by(name: "presentation")
 	end
 
 	def test

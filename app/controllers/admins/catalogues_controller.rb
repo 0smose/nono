@@ -13,12 +13,20 @@ class Admins::CataloguesController < ApplicationController
 		redirect_to admins_catalogue_path(@catalogue.id)
 		flash[:succes] = "Tu as bien crée le catalogue"
 	end
+  def edit
+    @catalogue = Catalogue.find(params[:id])
+  end
 
-	def edit
-	end
-
-	def update
-	end
+    def update
+    @catalogue = Catalogue.find(params[:id])
+    if @catalogue.update(name: params[:name], description: params[:description])
+      flash[:success] = "Vous avez bien édité le catalogue"
+      redirect_to admins_catalogues_path
+    else 
+      flash[:alert] = "Un problème est survenu, recommence :p"
+      render :edit
+   end
+  end
 
 	def show
 		@catalogue = Catalogue.find(params[:id])	

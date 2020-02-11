@@ -1,0 +1,15 @@
+<div class="container-fluid margin-footer">
+    <h1 class="text-center mt-5 mb-5"> Créer un nouveau texte </h1>
+    <div class="row align-items-center">
+        <div class="col col-sm-8 col-md-8 col-lg-6 text-center mx-auto">
+            <%= form_tag url_for(action: 'create'), method: "post", class: "mt-4" do %>  
+            <p class="text-center mb-5">
+             <%= label_tag 'Atelier/cours ou article ? :', nil, class: "font-weight-bold mt-3" %>
+            <%= select_tag 'name',options_for_select(["perso", "galerie", "presentation", "cours"]), class: "form-control" %>
+            </p>
+            <p class="text-center"><%= text_field_tag 'description', @text.description, placeholder: "description" , class: "form-control" %></p>
+            <%= submit_tag "Créer le nouveau texte", class: "btn btn-primary mb-3 mt-3 form-control" %>
+            <% end %>
+        </div>
+    </div>
+</div>

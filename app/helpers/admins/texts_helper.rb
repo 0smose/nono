@@ -1,0 +1,2 @@
+module Admins::TextsHelper
+end

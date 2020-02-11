@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @category = Category.all
+    @text = Text.all
   end
 
   def new
@@ -46,7 +47,8 @@ class CategoriesController < ApplicationController
     end
   end
 
- 
+  
+
   # def check_if_admin
   #   if current_user.id_admin == false
   #     flash[:error] = "Vous n'êtes pas un administrateur !"

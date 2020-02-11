@@ -2,6 +2,7 @@ class CataloguesController < ApplicationController
 
 		def index
 			@catalogues = Catalogue.all
+      @text = Text.find_by(name: "galerie")
 		end
 
 	  def delete_image_attachment

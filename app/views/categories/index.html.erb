@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col col-12">
-            <p class="mt-5 mb-5 mx-auto">Cras in sem vitae urna facilisis egestas a at lorem. Duis et mi sit amet felis lobortis rutrum non non est. Donec tincidunt ut nisl sit amet tincidunt. Nulla sollicitudin erat a magna consequat dapibus. Curabitur malesuada pharetra augue varius molestie. Sed hendrerit faucibus auctor. Curabitur non luctus libero, sed facilisis libero. Proin tempor accumsan blandit. Proin hendrerit at quam id facilisis. Morbi cursus neque vitae lacus bibendum ullamcorper. Mauris mattis mattis risus sit amet feugiat. Pellentesque eu dui mattis, cursus eros non, lacinia eros. Suspendisse fringilla arcu in neque auctor ullamcorper.</p>
+            <p class="mt-5 mb-5 mx-auto"><%= @text.find_by(name: "perso").description %></p>
         </div>
     </div>
 </div>
@@ -47,30 +47,10 @@
                                 <div class="row-flex " >
                                     <% cat.images.each do |image| %>
                                         <div class="column-flex">
-
-                                           
-
                                             <%= link_to image do %>
                                                 <%= image_tag((image), class:" d-block  w-100 fit  carrd-img-top gallery-item")%>
                                             <% end %>
-                                        </div>
-
-                                        <% if false %>
-                                            <div class="modal">
-
-                                                <!-- The Close Button -->
-                                                <span class="close">&times;</span>
-                                                
-                                                <!-- Modal Content (The Image) -->
-                                                <img class="modal-content " id="" >
-                                               
-                                                <!-- Modal Caption (Image Text) -->
-                                                <div class="captions" id="">
-                                                    
-                                                </div>
-                                            </div>
-                                        <% end %>
-                                       
+                                        </div>                                      
                                     <% end %> 
                                 </div> 
                             </div>
