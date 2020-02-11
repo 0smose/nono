@@ -7,29 +7,48 @@
 	</div>
 
 	<div class="container">
-		<% @articles.each do |article| %>
 		<div class="row">
-			<div class="col col-12">
-				<div class="card ml-5 mr-5 mb-5">
-					<div class="card-body">
-						<h3 class="card-title"> <%= article.title %> </h3>
-						<ul>	
-							<li><p class="card-text">  <%= article.body %> </p></li>
-							<li><p class="card-text">Public cible : <%= article.public %> </p></li>
-							<li><p class="card-text"> Nombre de personnes : <%= article.number %> </p></li>
-							<li><p class="card-text">Matériel logistique : <%= article.equipment %> </p></li>
-							<li><p class="card-text">Durée : <%= article.duration %> heures </p></li>
-							<li><p class="card-text"> Tarif : <%= article.price %> € </p></li>
-							<li><p><%= article.category %></p></li>
-						</ul>
-						<div class=" text-center">		 
-							<%= link_to "Éditer", edit_admins_article_path(article.id), class:"btn my-btn btn-info" %> 
-							<%= link_to "Supprimer", admins_article_path(article.id), method: 'delete',class:"btn my-btn btn-danger" %>
+			<div class="col col-6">
+
+				<h2> Cours et ateliers </h2>
+
+				<% @cours.each do |article| %>
+					<div class="card ml-2 mr-5 mb-5">
+						<div class="card-body">
+							<h3 class="card-title"> <%= article.title %> </h3>
+							<ul>	
+								<li><p class="card-text">  <%= article.body %> </p></li>
+								<li><p class="card-text">Public cible : <%= article.public %> </p></li>
+								<li><p class="card-text"> Nombre de personnes : <%= article.number %> </p></li>
+								<li><p class="card-text">Matériel logistique : <%= article.equipment %> </p></li>
+								<li><p class="card-text">Durée : <%= article.duration %> </p></li>
+								<li><p class="card-text"> Tarif : <%= article.price %> </p></li>
+							</ul>
+							<div class=" text-center">		 
+								<%= link_to "Éditer", edit_admins_article_path(article.id), class:"btn my-btn btn-info" %> 
+								<%= link_to "Supprimer", admins_article_path(article.id), method: 'delete',class:"btn my-btn btn-danger" %>
+							</div>
 						</div>
-					</div>
-				</div>
+					</div>			
+				<% end %>
 			</div>
-		</div>		
-		<% end %>
-	</div>
+			<div class="col col-6">
+
+				<h2> Articles et actualités </h2>
+
+				<% @articles.each do |article| %>
+					<div class="card ml-2 mr-5 mb-5">
+						<div class="card-body">
+							<h3 class="card-title"> <%= article.title %> </h3>
+							<p class="card-text"> <%= article.body %> </p>
+							<div class=" text-center">		 
+								<%= link_to "Éditer", edit_admins_article_path(article.id), class:"btn my-btn btn-info" %> 
+								<%= link_to "Supprimer", admins_article_path(article.id), method: 'delete',class:"btn my-btn btn-danger" %>
+							</div>
+						</div>
+					</div>	
+				<% end %>
+			</div>
+		</div>
+	</div>	
 </div>

@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
 	def index
-		@articles = Article.where(category: "Atelier/cours")
+		@cours = Article.where(category: "Atelier/cours")
 		@text = Text.find_by(name: "cours")
 	end 
 

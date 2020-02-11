@@ -1,7 +1,7 @@
 <div class="container margin-footer" style="background-color: initial;">
 	<div class="container-fluid pl-5 pr-5">
 	<p class="description mt-5 mb-5" style="text-align: justify;"><%= @text.description %></p></div>
-	<% @articles.each do |article| %>
+	<% @cours.each do |article| %>
 		<div class="row">
 			<div class="col col-12">
 				<div id="card" class="card card-shadow mt-3 ml-5 mr-5 mb-5">
@@ -15,8 +15,8 @@
 							<li><p class="card-text">Public cible : <%= article.public %> </p></li>
 							<li><p class="card-text">Nombre de personne : <%= article.number %> </p></li>
 							<li><p class="card-text">Matériel logistique : <%= article.equipment %> </p></li>
-							<li><p class="card-text"> Durée : <%= article.duration %> heure </p></li>
-							<li><p class="card-text">Tarif : <%= article.price %> € </p></li>
+							<li><p class="card-text"> Durée : <%= article.duration %> </p></li>
+							<li><p class="card-text">Tarif : <%= article.price %> </p></li>
 						</ul>
 						</div>				
 					</div>

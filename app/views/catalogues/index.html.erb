@@ -1,68 +1,18 @@
-<!-- Description de l'expo  -->
 
-<div class="container">
-    <div class="row">
+
+<!-- expo + modals -->
+<div class="container mb-5">   
+    <div class="row mb-5 pb-5 ">
         <div class="col col-12">
-            <p class="mt-5 mb-5 mx-auto"><%= @text.description %></p>
-        </div>
-    </div>
-</div>
-
-<!-- menu de l'exposition -->
-
-
-<div class="container margin-footer">
-    <div class="row">
-        <div class="col col-12">
-            <ul class ="nav nav-tabs my-menu justify-content-center my-border ">
-                <% @catalogues.each do |cat| %>
-                    <% cat.pictures.sort_by{|t| - t.created_at.to_i}.first(1).each do |image| %>
-                    <li class="nav-item mt-4 ml-3 mr-2 my-test-container">
-                  
-                        <a class="iterator" data-toggle="tab" href=""><%= image_tag(image, class:" fit my-test-overlay")%>
-                           
-                        <p class="overlay js--scroll"><%= cat.name %></p>
-                           
-                            </a>
-                   
-                    </li>
-                    
-                    <% end %>
+            <% @catalogues.each do |cat| %>
+            <div class="row-flex">
+                <% cat.pictures.each do |image| %>
+                     <div class="column-flex">
+                        <%= image_tag((image), class:" d-block w-100 fit  carrd-img-top gallery-item ")%>
+                    </div> 
                 <% end %>
-            </ul>
+                </div>
+            <% end %>  
         </div>
-    </div>
-
-        <!-- expo + modals -->
-
-    <div class="row ">
-        <div class="col col-12">
-            <div class="tab-content js--scroll-target">
-                <% @catalogues.each do |cat| %>
-                    <div id ="" class ="tab-pane fade image ">
-                        <h1 class="mt-5 mb-5 text-center"><%=cat.name%></h1>
-                        <p class="container mb-5" style="justify-content: left;"><%=cat.description%></p>
-                        <div class="container">
-                            <div class="container-fluid2 ">    
-                                <div class="row-flex " >
-                                    <% cat.pictures.each do |image| %>
-                                        <div class="column-flex">
-                                            <%= link_to image do %>
-                                                <%= image_tag((image), class:" d-block  w-100 fit  carrd-img-top gallery-item")%>
-                                            <% end %>
-                                        </div>                                      
-                                    <% end %> 
-                                </div> 
-                            </div>
-                        </div>                       
-                    </div>
-                <% end %>
-            </div>
-        </div>
-    </div>
+    </div>                       
 </div>
-
-
-
-
-
