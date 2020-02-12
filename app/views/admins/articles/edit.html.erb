@@ -27,7 +27,7 @@
                <%= text_area_tag 'price', @article.price, placeholder: "Entre un nombre ", class: "form-control mb-4" %>
 
                <%= label_tag 'Sa catégorie :',nil, class: "font-weight-bold " %>
-               <%= select_tag 'category', options_from_collection_for_select(Category.all, :id, :name), class: "form-control mb-5", prompt: 'Catégorie' %>
+               <%= select_tag 'category', options_for_select(["Atelier/cours", "Article"]), class: "form-control mb-5" %>
 
                 <div class="my-btn-display mt-5">
                     <%= submit_tag "Editer", class: "btn btn-primary mb-3 my-btn" %>

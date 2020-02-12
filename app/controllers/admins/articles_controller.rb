@@ -32,6 +32,7 @@ class Admins::ArticlesController < ApplicationController
 
 	def edit
 		@article = Article.find(params[:id])
+		@articles = Article.all
 	end
 
 	def update
