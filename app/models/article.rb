@@ -6,5 +6,6 @@ class Article < ApplicationRecord
  #  validates :category, presence: true, 
  #  					length: {minimum: 2}
   belongs_to :user
+  has_many_attached :images_article 
 
 end

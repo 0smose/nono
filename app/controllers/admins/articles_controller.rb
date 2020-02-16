@@ -60,4 +60,6 @@ class Admins::ArticlesController < ApplicationController
 		end
 	end
 
+
+
 end

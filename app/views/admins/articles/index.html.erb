@@ -24,6 +24,13 @@
 								<li><p class="card-text">Durée : <%= article.duration %> </p></li>
 								<li><p class="card-text"> Tarif : <%= article.price %> </p></li>
 							</ul>
+
+							<% article.images_article.each do |image| %>
+								<div class="col col-3 mb-3">
+									<%= image_tag(image, class:"fit my-scroll") %>
+								</div>
+							<% end %>
+
 							<div class=" text-center">		 
 								<%= link_to "Éditer", edit_admins_article_path(article.id), class:"btn my-btn btn-info" %> 
 								<%= link_to "Supprimer", admins_article_path(article.id), method: 'delete',class:"btn my-btn btn-danger" %>
@@ -41,6 +48,13 @@
 						<div class="card-body">
 							<h3 class="card-title"> <%= article.title %> </h3>
 							<p class="card-text"> <%= article.body %> </p>
+
+							<% article.images_article.each do |image| %>
+								<div class="col col-3 mb-3">
+									<%= image_tag(image, class:"fit my-scroll") %>
+								</div>
+							<% end %>
+
 							<div class=" text-center">		 
 								<%= link_to "Éditer", edit_admins_article_path(article.id), class:"btn my-btn btn-info" %> 
 								<%= link_to "Supprimer", admins_article_path(article.id), method: 'delete',class:"btn my-btn btn-danger" %>

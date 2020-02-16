@@ -56,4 +56,10 @@ class ArticlesController < ApplicationController
 		end
 	end
 
+	def delete_image_attachment
+		@article = Article.find(params[:article_id])
+		@article.images_article.find(params[:format]).purge
+		redirect_to edit_admins_article_path(@article.id)
+	end
+
 end

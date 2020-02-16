@@ -196,6 +196,14 @@ i {
 
 }
 
+.column-flex2 {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+  flex-shrink: 1;
+
+}
+
 .column-flex img {
   margin-bottom: 8px;
   vertical-align: middle;
@@ -367,6 +375,11 @@ footer {
 }
 
 /* Article */
+
+.article_image {
+
+  height: 200px;
+}
 
 .card-shadow {
   box-shadow: 2px 2px 18px #888888;

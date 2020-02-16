@@ -29,6 +29,11 @@ Rails.application.routes.draw do
     # post 'test', to: 'images#create2', as: :mytest
     delete :delete_image_attachment
   end
+
+  resources :articles do
+    resources :images_article
+    delete :delete_image_attachment
+  end
     
   namespace :admins do
     root to: "admins#index"

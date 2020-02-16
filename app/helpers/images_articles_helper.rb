@@ -1,0 +1,2 @@
+module ImagesArticlesHelper
+end
