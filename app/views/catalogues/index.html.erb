@@ -13,10 +13,10 @@
     <div class="row mb-5 pb-5 ">
         <div class="col col-12">
             <% @catalogues.each do |cat| %>
-            <div class="row-flex">
+            <div class="mansonry">
                 <% cat.pictures.each do |image| %>
-                     <div class="column-flex">
-                        <%= image_tag((image), class:" d-block w-100 fit  carrd-img-top gallery-item ")%>
+                     <div class="mansonry-item">
+                        <%= image_tag((image), class:" w-100  ")%>
                     </div> 
                 <% end %>
                 </div>
