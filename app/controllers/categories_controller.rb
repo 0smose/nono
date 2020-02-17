@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @category = Category.all
-    @text = Text.all
+    @text = Text.find_by(name: "perso")
   end
 
   def new

@@ -379,6 +379,8 @@ footer {
 .article_image {
 
   height: 200px;
+  margin-bottom: 13px;
+  width: auto;
 }
 
 .card-shadow {

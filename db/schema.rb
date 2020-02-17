@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 2020_02_11_103730) do
     t.text "public"
     t.text "number"
     t.text "equipment"
-    t.integer "duration"
-    t.integer "price"
+    t.string "duration"
+    t.string "price"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
